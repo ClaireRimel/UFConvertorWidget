@@ -56,6 +56,9 @@
 		FA8AB2D4246EBFFC007258A5 /* UFConvertorWidget */ = {
 			isa = PBXGroup;
 			children = (
+				FA8AB2ED246EC028007258A5 /* Model */,
+				FA8AB2EC246EC026007258A5 /* View */,
+				FA8AB2E9246EC01D007258A5 /* Controller */,
 				FA8AB2D5246EBFFC007258A5 /* AppDelegate.swift */,
 				FA8AB2D7246EBFFC007258A5 /* SceneDelegate.swift */,
 				FA8AB2D9246EBFFC007258A5 /* ViewController.swift */,
@@ -65,6 +68,27 @@
 				FA8AB2E3246EC002007258A5 /* Info.plist */,
 			);
 			path = UFConvertorWidget;
+			sourceTree = "<group>";
+		};
+		FA8AB2E9246EC01D007258A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA8AB2EC246EC026007258A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA8AB2ED246EC028007258A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
