@@ -13,7 +13,7 @@ struct RequestResponse: Codable {
 }
 
 struct Serie: Codable {
-    let date: Date
+    let date: String
     let value: Double
     
     enum CodingKeys: String, CodingKey {
