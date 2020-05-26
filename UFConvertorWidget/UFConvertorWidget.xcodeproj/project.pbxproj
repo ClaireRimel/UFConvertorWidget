@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4402A105FEEAC91ABCA2A030 /* Pods_UFConvertorWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */; };
+		F11ACCF591A85867552E0DFF /* Pods_UFwidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E577752AFA279485AEA666 /* Pods_UFwidget.framework */; };
 		FA30B85C246EF41B00C6959E /* PresentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B85B246EF41B00C6959E /* PresentMessage.swift */; };
 		FA30B864246F019800C6959E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA30B863246F019800C6959E /* NotificationCenter.framework */; };
 		FA30B867246F019800C6959E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B866246F019800C6959E /* TodayViewController.swift */; };
@@ -48,6 +50,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UFConvertorWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64D12D774BD3D58EE81B7680 /* Pods-UFwidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFwidget.release.xcconfig"; path = "Target Support Files/Pods-UFwidget/Pods-UFwidget.release.xcconfig"; sourceTree = "<group>"; };
+		6650DE8206B2434B9C13A08F /* Pods-UFwidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFwidget.debug.xcconfig"; path = "Target Support Files/Pods-UFwidget/Pods-UFwidget.debug.xcconfig"; sourceTree = "<group>"; };
+		8642E9AEE05D2B3E5DE18C24 /* Pods-UFConvertorWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFConvertorWidget.release.xcconfig"; path = "Target Support Files/Pods-UFConvertorWidget/Pods-UFConvertorWidget.release.xcconfig"; sourceTree = "<group>"; };
+		A0E577752AFA279485AEA666 /* Pods_UFwidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UFwidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1F3E488BF539C4BACFC2AAD /* Pods-UFConvertorWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFConvertorWidget.debug.xcconfig"; path = "Target Support Files/Pods-UFConvertorWidget/Pods-UFConvertorWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		FA30B85B246EF41B00C6959E /* PresentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMessage.swift; sourceTree = "<group>"; };
 		FA30B861246F019800C6959E /* UFwidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UFwidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA30B863246F019800C6959E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -73,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA30B864246F019800C6959E /* NotificationCenter.framework in Frameworks */,
+				F11ACCF591A85867552E0DFF /* Pods_UFwidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,16 +89,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4402A105FEEAC91ABCA2A030 /* Pods_UFConvertorWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3F173CB03146BD41BF33D87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1F3E488BF539C4BACFC2AAD /* Pods-UFConvertorWidget.debug.xcconfig */,
+				8642E9AEE05D2B3E5DE18C24 /* Pods-UFConvertorWidget.release.xcconfig */,
+				6650DE8206B2434B9C13A08F /* Pods-UFwidget.debug.xcconfig */,
+				64D12D774BD3D58EE81B7680 /* Pods-UFwidget.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA30B862246F019800C6959E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				FA30B863246F019800C6959E /* NotificationCenter.framework */,
+				03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */,
+				A0E577752AFA279485AEA666 /* Pods_UFwidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +134,7 @@
 				FA30B865246F019800C6959E /* UFwidget */,
 				FA30B862246F019800C6959E /* Frameworks */,
 				FA8AB2D3246EBFFC007258A5 /* Products */,
+				D3F173CB03146BD41BF33D87 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA30B86F246F019800C6959E /* Build configuration list for PBXNativeTarget "UFwidget" */;
 			buildPhases = (
+				C09B69C590268EBF0B9B673D /* [CP] Check Pods Manifest.lock */,
 				FA30B85D246F019800C6959E /* Sources */,
 				FA30B85E246F019800C6959E /* Frameworks */,
 				FA30B85F246F019800C6959E /* Resources */,
@@ -189,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA8AB2E6246EC002007258A5 /* Build configuration list for PBXNativeTarget "UFConvertorWidget" */;
 			buildPhases = (
+				DB2D187A5076F5D094D15A66 /* [CP] Check Pods Manifest.lock */,
 				FA8AB2CE246EBFFC007258A5 /* Sources */,
 				FA8AB2CF246EBFFC007258A5 /* Frameworks */,
 				FA8AB2D0246EBFFC007258A5 /* Resources */,
@@ -262,6 +288,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C09B69C590268EBF0B9B673D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UFwidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB2D187A5076F5D094D15A66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UFConvertorWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA30B85D246F019800C6959E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -325,6 +398,7 @@
 /* Begin XCBuildConfiguration section */
 		FA30B870246F019800C6959E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6650DE8206B2434B9C13A08F /* Pods-UFwidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDMB887655;
@@ -344,6 +418,7 @@
 		};
 		FA30B871246F019800C6959E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64D12D774BD3D58EE81B7680 /* Pods-UFwidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDMB887655;
@@ -477,6 +552,7 @@
 		};
 		FA8AB2E7246EC002007258A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1F3E488BF539C4BACFC2AAD /* Pods-UFConvertorWidget.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -490,12 +566,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		FA8AB2E8246EC002007258A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8642E9AEE05D2B3E5DE18C24 /* Pods-UFConvertorWidget.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -509,7 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
