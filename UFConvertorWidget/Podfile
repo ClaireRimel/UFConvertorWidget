@@ -4,18 +4,27 @@ platform :ios, '13.4'
 target 'UFConvertorWidget' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for UFConvertorWidget
-   pod 'Charts'
-
-
+  pod 'Charts'
+  
+  
 end
 
 target 'UFwidget' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for UFwidget
   pod 'Charts'
+  
+end
 
+target 'UFConvertorKit' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Pods for UFwidget
+  pod 'Charts'
+  
 end

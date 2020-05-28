@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058F8753FBC1C77AE94BB7F1 /* Pods_UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFD5D0278B32E879A15A79F /* Pods_UFConvertorKit.framework */; };
+		0863F825588E95CC7B5B26DE /* Pods_UFConvertorWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B21E248024C500110A73 /* Pods_UFConvertorWidget.framework */; };
 		F11ACCF591A85867552E0DFF /* Pods_UFwidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E577752AFA279485AEA666 /* Pods_UFwidget.framework */; };
 		FA30B85C246EF41B00C6959E /* PresentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B85B246EF41B00C6959E /* PresentMessage.swift */; };
 		FA30B867246F019800C6959E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B866246F019800C6959E /* TodayViewController.swift */; };
@@ -21,6 +23,8 @@
 		FA67B20E247FC55900110A73 /* ResquestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */; };
 		FA67B20F247FC56200110A73 /* CurrencyConverterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B873246F084600C6959E /* CurrencyConverterError.swift */; };
 		FA67B211247FEEEA00110A73 /* ConvertDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67B210247FEEEA00110A73 /* ConvertDouble.swift */; };
+		FA67B2132480238E00110A73 /* SetChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67B2122480238E00110A73 /* SetChart.swift */; };
+		FA67B2192480244A00110A73 /* Pods_UFwidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B2172480244A00110A73 /* Pods_UFwidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA67E54A247D760E008F6A1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DE246EC002007258A5 /* Assets.xcassets */; };
 		FA8AB2D6246EBFFC007258A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2D5246EBFFC007258A5 /* AppDelegate.swift */; };
 		FA8AB2D8246EBFFC007258A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2D7246EBFFC007258A5 /* SceneDelegate.swift */; };
@@ -87,6 +91,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FAE609EE247ED5C500EB6777 /* Pods_UFConvertorWidget.framework in Embed Frameworks */,
+				FA67B2192480244A00110A73 /* Pods_UFwidget.framework in Embed Frameworks */,
 				FA67B204247FC31E00110A73 /* UFConvertorKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -96,11 +101,14 @@
 
 /* Begin PBXFileReference section */
 		03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UFConvertorWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AFD5D0278B32E879A15A79F /* Pods_UFConvertorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UFConvertorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2767C08DF2029A3014D6C66E /* Pods-UFwidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFwidget.release.xcconfig"; path = "Target Support Files/Pods-UFwidget/Pods-UFwidget.release.xcconfig"; sourceTree = "<group>"; };
 		5FC6EF5A9A91CB6C745DE4AC /* Pods-UFConvertorWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFConvertorWidget.release.xcconfig"; path = "Target Support Files/Pods-UFConvertorWidget/Pods-UFConvertorWidget.release.xcconfig"; sourceTree = "<group>"; };
 		7BD030241646AFB837CE8700 /* Pods-UFConvertorWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFConvertorWidget.debug.xcconfig"; path = "Target Support Files/Pods-UFConvertorWidget/Pods-UFConvertorWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		A0E577752AFA279485AEA666 /* Pods_UFwidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UFwidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99264B139D997615C862FE5 /* Pods-UFwidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFwidget.debug.xcconfig"; path = "Target Support Files/Pods-UFwidget/Pods-UFwidget.debug.xcconfig"; sourceTree = "<group>"; };
+		C0E74ABCB64781433AE77A6B /* Pods-UFConvertorKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFConvertorKit.release.xcconfig"; path = "Target Support Files/Pods-UFConvertorKit/Pods-UFConvertorKit.release.xcconfig"; sourceTree = "<group>"; };
+		C48B3F58C69EAE0B19281B2D /* Pods-UFConvertorKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFConvertorKit.debug.xcconfig"; path = "Target Support Files/Pods-UFConvertorKit/Pods-UFConvertorKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FA30B85B246EF41B00C6959E /* PresentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentMessage.swift; sourceTree = "<group>"; };
 		FA30B861246F019800C6959E /* UFwidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UFwidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA30B863246F019800C6959E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -112,6 +120,12 @@
 		FA67B1FE247FC31E00110A73 /* UFConvertorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UFConvertorKit.h; sourceTree = "<group>"; };
 		FA67B1FF247FC31E00110A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA67B210247FEEEA00110A73 /* ConvertDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDouble.swift; sourceTree = "<group>"; };
+		FA67B2122480238E00110A73 /* SetChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetChart.swift; sourceTree = "<group>"; };
+		FA67B2142480240F00110A73 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA67B2172480244A00110A73 /* Pods_UFwidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_UFwidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA67B21A248024A100110A73 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA67B21E248024C500110A73 /* Pods_UFConvertorWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_UFConvertorWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA67B2252480252400110A73 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8AB2D2246EBFFC007258A5 /* UFConvertorWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UFConvertorWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8AB2D5246EBFFC007258A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8AB2D7246EBFFC007258A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058F8753FBC1C77AE94BB7F1 /* Pods_UFConvertorKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +163,7 @@
 			files = (
 				FAE609ED247ED5C500EB6777 /* Pods_UFConvertorWidget.framework in Frameworks */,
 				FA67B203247FC31E00110A73 /* UFConvertorKit.framework in Frameworks */,
+				0863F825588E95CC7B5B26DE /* Pods_UFConvertorWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +177,8 @@
 				5FC6EF5A9A91CB6C745DE4AC /* Pods-UFConvertorWidget.release.xcconfig */,
 				B99264B139D997615C862FE5 /* Pods-UFwidget.debug.xcconfig */,
 				2767C08DF2029A3014D6C66E /* Pods-UFwidget.release.xcconfig */,
+				C48B3F58C69EAE0B19281B2D /* Pods-UFConvertorKit.debug.xcconfig */,
+				C0E74ABCB64781433AE77A6B /* Pods-UFConvertorKit.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -168,9 +186,14 @@
 		FA30B862246F019800C6959E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA67B2252480252400110A73 /* Charts.framework */,
+				FA67B21E248024C500110A73 /* Pods_UFConvertorWidget.framework */,
+				FA67B21A248024A100110A73 /* Charts.framework */,
+				FA67B2142480240F00110A73 /* Charts.framework */,
 				FA30B863246F019800C6959E /* NotificationCenter.framework */,
 				03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */,
 				A0E577752AFA279485AEA666 /* Pods_UFwidget.framework */,
+				1AFD5D0278B32E879A15A79F /* Pods_UFConvertorKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,11 +214,20 @@
 				FA8AB2F2246EC089007258A5 /* RequestModel.swift */,
 				FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */,
 				FA30B873246F084600C6959E /* CurrencyConverterError.swift */,
+				FA67B210247FEEEA00110A73 /* ConvertDouble.swift */,
+				FA67B2122480238E00110A73 /* SetChart.swift */,
 				FA67B1FE247FC31E00110A73 /* UFConvertorKit.h */,
 				FA67B1FF247FC31E00110A73 /* Info.plist */,
-				FA67B210247FEEEA00110A73 /* ConvertDouble.swift */,
 			);
 			path = UFConvertorKit;
+			sourceTree = "<group>";
+		};
+		FA67B228248029FC00110A73 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				FA67B2172480244A00110A73 /* Pods_UFwidget.framework */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		FA8AB2C9246EBFFC007258A5 = {
@@ -207,6 +239,7 @@
 				FA30B862246F019800C6959E /* Frameworks */,
 				FA8AB2D3246EBFFC007258A5 /* Products */,
 				E2BD0AEEB06B3F811DD61CEA /* Pods */,
+				FA67B228248029FC00110A73 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,6 +330,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA67B207247FC31E00110A73 /* Build configuration list for PBXNativeTarget "UFConvertorKit" */;
 			buildPhases = (
+				E95044E73389ACB05126EB18 /* [CP] Check Pods Manifest.lock */,
 				FA67B1F7247FC31E00110A73 /* Headers */,
 				FA67B1F8247FC31E00110A73 /* Sources */,
 				FA67B1F9247FC31E00110A73 /* Frameworks */,
@@ -466,6 +500,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E95044E73389ACB05126EB18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UFConvertorKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -484,6 +540,7 @@
 				FA67B20E247FC55900110A73 /* ResquestResponse.swift in Sources */,
 				FA67B211247FEEEA00110A73 /* ConvertDouble.swift in Sources */,
 				FA67B20F247FC56200110A73 /* CurrencyConverterError.swift in Sources */,
+				FA67B2132480238E00110A73 /* SetChart.swift in Sources */,
 				FA67B208247FC33300110A73 /* RequestModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +646,7 @@
 		};
 		FA67B205247FC31E00110A73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C48B3F58C69EAE0B19281B2D /* Pods-UFConvertorKit.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -618,6 +676,7 @@
 		};
 		FA67B206247FC31E00110A73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E74ABCB64781433AE77A6B /* Pods-UFConvertorKit.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;

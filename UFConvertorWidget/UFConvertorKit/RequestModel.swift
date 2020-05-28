@@ -17,7 +17,7 @@ public final class RequestModel {
     
     var latestRateAndDate: LatestRateAndDate?
     
-    var series: [Serie] = []
+    public var series: [Serie] = []
     
     public init(){}
     
@@ -42,7 +42,7 @@ public final class RequestModel {
                 switch result {
                 case .success:
                     self.convert(from: from, then: then)
-                case let .failure(error):
+                case .failure(_):
                     //TODO: HANDLE ERROR
                     break
                 }

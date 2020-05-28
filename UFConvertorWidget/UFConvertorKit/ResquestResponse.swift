@@ -12,7 +12,7 @@ struct RequestResponse: Codable {
     let serie: [Serie]
 }
 
-struct Serie: Codable {
+public struct Serie: Codable {
     let date: String
     let value: Double
     
