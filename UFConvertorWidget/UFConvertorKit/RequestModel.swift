@@ -10,11 +10,6 @@ import Foundation
 
 public final class RequestModel {
     
-    enum RequestDateRequired: Equatable {
-        case required
-        case notRequired
-    }
-    
     struct LatestRateAndDate {
         var clpRate: Double
         var requestDate: String
@@ -43,7 +38,7 @@ public final class RequestModel {
                 then(.success(clpRate))
             }
         } else {
-            request(required:.required, then: { (result) in
+            request(  then: { (result) in
                 switch result {
                 case .success:
                     self.convert(from: from, then: then)
@@ -55,22 +50,13 @@ public final class RequestModel {
         }
     }
     
-    func request(required: RequestDateRequired,  then: @escaping (Result<RequestResponse, Error>) -> Void) {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let dateToday = dateFormatter.string(from: Date())
+    func request(then: @escaping (Result<RequestResponse, Error>) -> Void) {
         
         var components = URLComponents()
         components.scheme = "https"
         components.host = "mindicador.cl"
+        components.path = "/api/uf"
         
-        if required == .required {
-            components.path = "/api/uf/\(dateToday)"
-        } else {
-            components.path = "/api/uf"
-        }
-
         //Gets URL object based on given components
         let url = components.url!
         print(url)
@@ -107,14 +93,16 @@ public final class RequestModel {
                             }
                             return
                 }
+                
                 self.series = decodedResponse.serie
-                self.latestRateAndDate = LatestRateAndDate(clpRate: decodedResponse.serie[0].value , requestDate:  decodedResponse.serie[0].date)
-
+                self.latestRateAndDate = LatestRateAndDate(
+                    clpRate: decodedResponse.serie[0].value,
+                    requestDate:  decodedResponse.serie[0].date)
+                
                 DispatchQueue.main.async {
                     then(.success(decodedResponse))
                     print(decodedResponse)
                 }
-                
             } else {
                 guard let data = data,
                     let decodedResponse = try?
@@ -135,13 +123,10 @@ public final class RequestModel {
     }
     
     // Use to format today's date and compare it with a given date
-      func wasRequestMadeToday(requestDate: String) -> Bool {
-//        "2020-05-15T04:00:00.000Z"
+    func wasRequestMadeToday(requestDate: String) -> Bool {
         
-        
-//          let date = Date()
-          let format = DateFormatter()
-          format.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         if let dateToCompare = format.date(from: requestDate) {
             if Calendar.current.compare(Date(), to: dateToCompare, toGranularity: .day) == .orderedSame {
@@ -149,10 +134,10 @@ public final class RequestModel {
             }
         }
         return false
-      }
+    }
     
     // Use to convert a curreny to a Double
-       func convertToDouble(from currency: String)-> Double? {
-           return Double(currency)
-       }
+    func convertToDouble(from currency: String)-> Double? {
+        return Double(currency)
+    }
 }
