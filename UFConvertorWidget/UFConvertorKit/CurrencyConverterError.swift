@@ -9,15 +9,15 @@
 import Foundation
 
 //typed errors
-enum CurrencyConverterError: Error, Equatable {
+public enum CurrencyConverterError: Error, Equatable {
     case requestError(NSError)
     case invalidResponseFormat
     case usdRateNotFound
     case invalidInput
 }
 
-extension CurrencyConverterError {
-    var message: String{
+public extension CurrencyConverterError {
+     var message: String{
         switch self {
         case let .requestError(error):
             return error.localizedDescription

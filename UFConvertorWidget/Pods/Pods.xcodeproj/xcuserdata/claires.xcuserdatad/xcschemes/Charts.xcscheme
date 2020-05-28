@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "267B737119B9E819B876BF85C6427D6A"
-               BuildableName = "Pods_UFConvertorWidget.framework"
-               BlueprintName = "Pods-UFConvertorWidget"
+               BlueprintIdentifier = "BF03B0B2B8B052092CB5F90CC5FB3757"
+               BuildableName = "Charts.framework"
+               BlueprintName = "Charts"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

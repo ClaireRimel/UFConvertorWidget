@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class RequestModel {
+public final class RequestModel {
     
     enum RequestDateRequired: Equatable {
         case required
@@ -24,7 +24,9 @@ final class RequestModel {
     
     var series: [Serie] = []
     
-    func convert(from: String, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
+    public init(){}
+    
+    public func convert(from: String, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
         
         // Verify if the String can be converter to a Double, if not, a error message will be displayed.
         guard let value = convertToDouble(from: from)

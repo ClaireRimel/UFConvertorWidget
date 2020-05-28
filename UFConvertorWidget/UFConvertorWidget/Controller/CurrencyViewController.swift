@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UFConvertorKit
 
 class CurrencyViewController: UIViewController {
     @IBOutlet var date: UILabel!
@@ -21,7 +22,7 @@ class CurrencyViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        uFValue.delegate = self
+        //        uFValue.delegate = self
         toggleActivityIndicator(shown: false)
         
         uFValue.text = "1"
@@ -68,4 +69,5 @@ class CurrencyViewController: UIViewController {
         numberFormatter.locale = locale
         return numberFormatter.string(from: NSNumber(value: amount))!
     }
+    
 }
