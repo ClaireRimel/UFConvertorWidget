@@ -141,8 +141,8 @@ public final class RequestModel {
         return Double(currency)
     }
     
-  public func differenceValue() -> Double {
+    public func differenceValue() -> Int {
         let difference = series[0].value - series[1].value
-    return difference
+        return Int(difference)
     }
 }
