@@ -41,7 +41,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             case let .success(clpValue):
                 let value = ConvertDouble.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
                 self.priceLabel.text = value
-                self.changePriceLabel.text = "\(self.model.differenceValue())"
+                
+                let diffenceValue = self.model.differenceValue()
+                if diffenceValue < 0 {
+                    self.changePriceLabel.text = "\(diffenceValue)"
+                    self.changePriceLabel.textColor = .red
+                } else if diffenceValue == 0 {
+                    self.changePriceLabel.text = "\(diffenceValue)"
+                } else {
+                    self.changePriceLabel.text = "+ \(diffenceValue)"
+                    self.changePriceLabel.textColor = .green
+                }
+                
             case .failure:
                 self.priceLabel.text = "Error"
             }

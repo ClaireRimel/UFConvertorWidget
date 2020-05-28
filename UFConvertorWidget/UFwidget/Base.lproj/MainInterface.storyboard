@@ -16,12 +16,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Error" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="16" y="4" width="175.5" height="39.5"/>
+                                <rect key="frame" x="16" y="4" width="130" height="39.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1.23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FA-pc-eQF">
-                                <rect key="frame" x="222.5" y="4" width="81.5" height="39.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1.23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FA-pc-eQF">
+                                <rect key="frame" x="154" y="4" width="150" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,11 +34,12 @@
                         <constraints>
                             <constraint firstItem="Xg0-C1-CyC" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="leading" constant="8" id="2xU-7E-c3r"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="4" id="3l2-Pc-DBr"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="128.5" id="6ST-IQ-j61"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="174" id="6ST-IQ-j61"/>
                             <constraint firstItem="Xg0-C1-CyC" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" id="E0X-dz-KEr"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="VEd-VN-dCd"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Xg0-C1-CyC" secondAttribute="bottomMargin" id="hcc-Pm-nIL"/>
                             <constraint firstItem="6FA-pc-eQF" firstAttribute="trailing" secondItem="Xg0-C1-CyC" secondAttribute="trailing" constant="8" id="jbm-uY-N2J"/>
+                            <constraint firstItem="6FA-pc-eQF" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="8" id="kze-Pg-MY6"/>
                             <constraint firstItem="6FA-pc-eQF" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="4" id="t64-ve-8iT"/>
                             <constraint firstItem="6FA-pc-eQF" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="tBE-YY-o5J"/>
                         </constraints>
