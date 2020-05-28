@@ -140,4 +140,9 @@ public final class RequestModel {
     func convertToDouble(from currency: String)-> Double? {
         return Double(currency)
     }
+    
+  public func differenceValue() -> Double {
+        let difference = series[0].value - series[1].value
+    return difference
+    }
 }
