@@ -28,7 +28,6 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xg0-C1-CyC">
                                 <rect key="frame" x="24" y="43.5" width="272" height="90.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <constraints>
@@ -50,7 +49,7 @@
                     <size key="freeformSize" width="320" height="126"/>
                     <connections>
                         <outlet property="changePriceLabel" destination="6FA-pc-eQF" id="ldt-tN-KM8"/>
-                        <outlet property="lineChartView" destination="Xg0-C1-CyC" id="Jvt-o4-TWp"/>
+                        <outlet property="graphContainerView" destination="Xg0-C1-CyC" id="mbD-Vf-GE0"/>
                         <outlet property="priceLabel" destination="GcN-lo-r42" id="q80-CX-Y3A"/>
                     </connections>
                 </viewController>
