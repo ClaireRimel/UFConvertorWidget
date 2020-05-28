@@ -11,6 +11,12 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var changePriceLabel: UILabel!
+    @IBOutlet var lineChartView: UIView!
+    
+    let model = RequestModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
