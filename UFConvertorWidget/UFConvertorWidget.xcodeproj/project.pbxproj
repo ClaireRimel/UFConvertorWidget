@@ -20,6 +20,7 @@
 		FA67B20A247FC3A300110A73 /* UFConvertorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA67B20E247FC55900110A73 /* ResquestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */; };
 		FA67B20F247FC56200110A73 /* CurrencyConverterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B873246F084600C6959E /* CurrencyConverterError.swift */; };
+		FA67B211247FEEEA00110A73 /* ConvertDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67B210247FEEEA00110A73 /* ConvertDouble.swift */; };
 		FA67E54A247D760E008F6A1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DE246EC002007258A5 /* Assets.xcassets */; };
 		FA8AB2D6246EBFFC007258A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2D5246EBFFC007258A5 /* AppDelegate.swift */; };
 		FA8AB2D8246EBFFC007258A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2D7246EBFFC007258A5 /* SceneDelegate.swift */; };
@@ -110,6 +111,7 @@
 		FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UFConvertorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA67B1FE247FC31E00110A73 /* UFConvertorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UFConvertorKit.h; sourceTree = "<group>"; };
 		FA67B1FF247FC31E00110A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA67B210247FEEEA00110A73 /* ConvertDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDouble.swift; sourceTree = "<group>"; };
 		FA8AB2D2246EBFFC007258A5 /* UFConvertorWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UFConvertorWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8AB2D5246EBFFC007258A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8AB2D7246EBFFC007258A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				FA30B873246F084600C6959E /* CurrencyConverterError.swift */,
 				FA67B1FE247FC31E00110A73 /* UFConvertorKit.h */,
 				FA67B1FF247FC31E00110A73 /* Info.plist */,
+				FA67B210247FEEEA00110A73 /* ConvertDouble.swift */,
 			);
 			path = UFConvertorKit;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA67B20E247FC55900110A73 /* ResquestResponse.swift in Sources */,
+				FA67B211247FEEEA00110A73 /* ConvertDouble.swift in Sources */,
 				FA67B20F247FC56200110A73 /* CurrencyConverterError.swift in Sources */,
 				FA67B208247FC33300110A73 /* RequestModel.swift in Sources */,
 			);

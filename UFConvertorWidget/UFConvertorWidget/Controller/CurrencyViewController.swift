@@ -49,7 +49,7 @@ class CurrencyViewController: UIViewController {
             self.toggleActivityIndicator(shown: false)
             switch result {
             case let .success(clpValue):
-                let value = self.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
+                let value = ConvertDouble.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
                 self.clpValue.text = value
                 
             case let .failure(error):
@@ -62,12 +62,4 @@ class CurrencyViewController: UIViewController {
         calculateButton.isHidden = shown
         activityIndicator.isHidden = !shown
     }
-    
-    func convertDoubleToCurrency(amount: Double, locale: Locale) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.locale = locale
-        return numberFormatter.string(from: NSNumber(value: amount))!
-    }
-    
 }
