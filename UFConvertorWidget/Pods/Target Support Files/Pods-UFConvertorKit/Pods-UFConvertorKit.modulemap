@@ -1,0 +1,6 @@
+framework module Pods_UFConvertorKit {
+  umbrella header "Pods-UFConvertorKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
