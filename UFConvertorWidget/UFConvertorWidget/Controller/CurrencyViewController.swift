@@ -30,24 +30,9 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         let chartview = LineChartView()
         chartview.backgroundColor = .clear
         chartview.rightAxis.enabled = false
-        
-        
-        let yAxis = chartview.leftAxis
-        yAxis.labelFont = .boldSystemFont(ofSize: 12)
-        yAxis.setLabelCount(6, force: false)
-        yAxis.labelTextColor =  .white
-        yAxis.axisLineColor = .white
-        yAxis.labelPosition = .outsideChart
-        
+        chartview.leftAxis.enabled = false
+        chartview.legend.enabled = false
         chartview.xAxis.enabled = false
-
-//        chartview.xAxis.labelPosition = .bottom
-        chartview.xAxis.labelFont = .boldSystemFont(ofSize: 12)
-        chartview.xAxis.setLabelCount(6, force: false)
-        chartview.xAxis.labelTextColor = .white
-        chartview.xAxis.axisLineColor = .systemBlue
-        
-        
         chartview.animate(xAxisDuration: 1.0)
         
         return chartview
@@ -111,9 +96,6 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         set1.mode = .cubicBezier
         set1.lineWidth = 3
         set1.setColor(.white)
-        set1.fill = Fill(color: .white)
-        set1.fillAlpha = 0.8
-        set1.drawFilledEnabled = true
         set1.drawHorizontalHighlightIndicatorEnabled = false
         set1.highlightColor = .systemRed
         set1.highlightLineWidth = 2

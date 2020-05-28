@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-Ja-2d3">
-                                <rect key="frame" x="20" y="64" width="374" height="788"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-Ja-2d3">
+                                <rect key="frame" x="20" y="64" width="374" height="768"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1n-vK-OM8">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="23"/>
@@ -25,17 +25,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDe-b9-gRD">
-                                        <rect key="frame" x="0.0" y="61" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="38" width="374" height="522"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CLP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-is-zGF">
-                                        <rect key="frame" x="0.0" y="133" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="575" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srj-1E-fuB">
-                                        <rect key="frame" x="0.0" y="205" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="624" width="374" height="36"/>
                                         <color key="backgroundColor" red="0.9452880025" green="0.61306428909999999" blue="0.51761853690000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="GO">
@@ -46,11 +46,8 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-ME-oHo">
-                                        <rect key="frame" x="0.0" y="279" width="374" height="509"/>
+                                        <rect key="frame" x="0.0" y="675" width="374" height="93"/>
                                         <color key="backgroundColor" red="0.059026794180000001" green="0.26052961810000003" blue="0.39052380180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="750" constant="516" id="7iP-Nj-4cx"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -64,7 +61,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XB2-Ja-2d3" secondAttribute="trailing" constant="20" id="6ht-Tg-bC5"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7tx-wc-RkZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XB2-Ja-2d3" secondAttribute="bottom" constant="10" id="ncG-gH-y21"/>
+                            <constraint firstItem="XB2-Ja-2d3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZW9-bG-cnG"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wnR-w2-Dfw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
