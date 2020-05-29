@@ -15,7 +15,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     @IBOutlet var uFValue: UITextField!
     @IBOutlet var clpValue: UITextField!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet var calculateButton: UIButton!
+    @IBOutlet var calculateButton: RoundButton!
     @IBOutlet var graphContainerView: UIView!
     
     let model = RequestModel()
@@ -42,9 +42,9 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         toggleActivityIndicator(shown: false)
-        
+        uFValue.layer.cornerRadius = 17
         uFValue.text = "1"
-        
+        clpValue.layer.cornerRadius = 17
         // This function is called in viewDidLoad to ask the model the currency information of 1 EUR.
         request()
         
@@ -52,7 +52,6 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         lineChartView.frame.origin.y = 0
         graphContainerView.addSubview(lineChartView)
     }
-    
     
     @IBAction func tappedGoButton(_ sender: Any) {
         toggleActivityIndicator(shown: true)
@@ -93,7 +92,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         let set1 = LineChartDataSet(entries: setChart.chartData(), label: "CLP")
         
         set1.drawCirclesEnabled = false
-        set1.mode = .cubicBezier
+        set1.mode = .linear
         set1.lineWidth = 3
         set1.setColor(.white)
         set1.drawHorizontalHighlightIndicatorEnabled = false

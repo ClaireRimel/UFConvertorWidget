@@ -43,7 +43,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, ChartViewDelegat
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         completionHandler(NCUpdateResult.newData)
-        drawGraph()
     }
     
     func request() {
@@ -52,8 +51,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, ChartViewDelegat
             case let .success(clpValue):
                 let value = ConvertDouble.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
                 self.priceLabel.text = value
-                
-                
                 let diffenceValue = self.model.differenceValue()
                 if diffenceValue < 0 {
                     self.changePriceLabel.text = "\(diffenceValue)"
@@ -64,7 +61,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, ChartViewDelegat
                     self.changePriceLabel.text = "+ \(diffenceValue)"
                     self.changePriceLabel.textColor = .green
                 }
-                
+                self.drawGraph()
+
             case .failure:
                 self.priceLabel.text = "Error"
             }
@@ -74,15 +72,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, ChartViewDelegat
     func drawGraph() {
         let setChart = SetChart(series: model.series)
         let set1 = LineChartDataSet(entries: setChart.chartData(), label: "CLP")
-        
         set1.drawCirclesEnabled = false
         set1.mode = .linear
         set1.lineWidth = 3
-        set1.setColor(.black)
-        set1.drawHorizontalHighlightIndicatorEnabled = false
-        set1.highlightColor = .systemRed
-        set1.highlightLineWidth = 2
-        
+        set1.setColor(#colorLiteral(red: 0.96371454, green: 0.8006860614, blue: 0.4755767584, alpha: 1))
+        set1.setDrawHighlightIndicators(false)
         let data = LineChartData(dataSet: set1)
         data.setDrawValues(false)
         lineChartView.data = data
@@ -97,8 +91,10 @@ extension TodayViewController {
             
         } else if activeDisplayMode == .expanded {
             self.preferredContentSize = CGSize(width: maxSize.width, height: 200)
+
             graphContainerView.isHidden = false
             lineChartView.frame.size.height = 150
+            lineChartView.frame.size.width = maxSize.width - 35
             lineChartView.animate(xAxisDuration: 1.0)
         }
     }
