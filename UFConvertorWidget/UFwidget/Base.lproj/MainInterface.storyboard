@@ -35,7 +35,7 @@
                         <constraints>
                             <constraint firstItem="Xg0-C1-CyC" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="1fM-J5-vyH"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="Xg0-C1-CyC" secondAttribute="bottom" id="IQU-HE-Ebp"/>
-                            <constraint firstItem="6FA-pc-eQF" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="237" id="JAM-zj-amS"/>
+                            <constraint firstItem="6FA-pc-eQF" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" priority="250" constant="237" id="JAM-zj-amS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6FA-pc-eQF" secondAttribute="trailing" id="L1n-vj-PRD"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ssy-KU-ocm" secondAttribute="leading" id="Tmp-CP-MQA"/>
                             <constraint firstItem="Xg0-C1-CyC" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" id="aGH-SL-f0a"/>
@@ -64,7 +64,7 @@
             <color red="0.073653884229999994" green="0.096882544459999997" blue="0.29805776480000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ButtonColor">
-            <color red="0.091116078200000006" green="0.10522056370000001" blue="0.14902529119999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.090196078431372548" green="0.10588235294117647" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
