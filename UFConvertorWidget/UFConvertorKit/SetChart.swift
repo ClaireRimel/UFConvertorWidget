@@ -18,7 +18,9 @@ public struct SetChart {
     
     public func chartData() -> [ChartDataEntry] {
         var entries: [ChartDataEntry] = []
-        
+        guard !series.isEmpty else {
+            return []
+        }
         for i in 0..<series.count-1 {
             entries.append( ChartDataEntry(x: Double(i), y: self.series[i].value))
         }
