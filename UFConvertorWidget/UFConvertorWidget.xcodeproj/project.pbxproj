@@ -14,6 +14,8 @@
 		FA30B867246F019800C6959E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B866246F019800C6959E /* TodayViewController.swift */; };
 		FA30B86A246F019800C6959E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30B868246F019800C6959E /* MainInterface.storyboard */; };
 		FA30B86E246F019800C6959E /* UFwidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA30B861246F019800C6959E /* UFwidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA3CA569248116B000F2B6B4 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3CA568248116B000F2B6B4 /* RoundedButton.swift */; };
+		FA5741362481251400BAD968 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5741352481251400BAD968 /* Color.xcassets */; };
 		FA67B200247FC31E00110A73 /* UFConvertorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA67B1FE247FC31E00110A73 /* UFConvertorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA67B203247FC31E00110A73 /* UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; };
 		FA67B204247FC31E00110A73 /* UFConvertorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -116,6 +118,8 @@
 		FA30B869246F019800C6959E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		FA30B86B246F019800C6959E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA30B873246F084600C6959E /* CurrencyConverterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterError.swift; sourceTree = "<group>"; };
+		FA3CA568248116B000F2B6B4 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		FA5741352481251400BAD968 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UFConvertorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA67B1FE247FC31E00110A73 /* UFConvertorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UFConvertorKit.h; sourceTree = "<group>"; };
 		FA67B1FF247FC31E00110A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -262,9 +266,11 @@
 				FA8AB2D5246EBFFC007258A5 /* AppDelegate.swift */,
 				FA8AB2D7246EBFFC007258A5 /* SceneDelegate.swift */,
 				FA8AB2DE246EC002007258A5 /* Assets.xcassets */,
+				FA5741352481251400BAD968 /* Color.xcassets */,
 				FA8AB2E0246EC002007258A5 /* LaunchScreen.storyboard */,
 				FA8AB2E3246EC002007258A5 /* Info.plist */,
 				FA30B85B246EF41B00C6959E /* PresentMessage.swift */,
+				FA3CA568248116B000F2B6B4 /* RoundedButton.swift */,
 			);
 			path = UFConvertorWidget;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8AB2E2246EC002007258A5 /* LaunchScreen.storyboard in Resources */,
+				FA5741362481251400BAD968 /* Color.xcassets in Resources */,
 				FA8AB2DF246EC002007258A5 /* Assets.xcassets in Resources */,
 				FA8AB2DD246EBFFC007258A5 /* Main.storyboard in Resources */,
 			);
@@ -550,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8AB2DA246EBFFC007258A5 /* CurrencyViewController.swift in Sources */,
+				FA3CA569248116B000F2B6B4 /* RoundedButton.swift in Sources */,
 				FA8AB2D6246EBFFC007258A5 /* AppDelegate.swift in Sources */,
 				FA8AB2D8246EBFFC007258A5 /* SceneDelegate.swift in Sources */,
 				FA30B85C246EF41B00C6959E /* PresentMessage.swift in Sources */,
@@ -667,6 +675,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -697,6 +706,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
