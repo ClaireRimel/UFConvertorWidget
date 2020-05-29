@@ -114,16 +114,16 @@
     </scenes>
     <resources>
         <namedColor name="BackGround">
-            <color red="0.96676629780000001" green="0.8557038307" blue="0.79214489460000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96700000762939453" green="0.85600000619888306" blue="0.79199999570846558" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ButtonColor">
-            <color red="0.091116078200000006" green="0.10522056370000001" blue="0.14902529119999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.090196078431372548" green="0.10588235294117647" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="GrayTextFiel">
-            <color red="0.68124396177123281" green="0.61601740120000004" blue="0.5882316232" alpha="0.85835830479452058" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.6809999942779541" green="0.61599999666213989" blue="0.58799999952316284" alpha="0.85799998044967651" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Sand">
-            <color red="0.94170361759999999" green="0.88543730970000001" blue="0.56856369969999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.94117647058823528" green="0.88627450980392153" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
