@@ -12,41 +12,40 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="UFwidget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Error" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="16" y="4" width="130" height="39.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1.23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FA-pc-eQF">
-                                <rect key="frame" x="154" y="4" width="150" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FA-pc-eQF">
+                                <rect key="frame" x="274.5" y="69" width="29.5" height="39.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xg0-C1-CyC">
-                                <rect key="frame" x="24" y="43.5" width="272" height="90.5"/>
+                                <rect key="frame" x="8" y="108.5" width="304" height="9.5"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                                <rect key="frame" x="8" y="69" width="29.5" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Xg0-C1-CyC" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="leading" constant="8" id="2xU-7E-c3r"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="4" id="3l2-Pc-DBr"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="174" id="6ST-IQ-j61"/>
-                            <constraint firstItem="Xg0-C1-CyC" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" id="E0X-dz-KEr"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="VEd-VN-dCd"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Xg0-C1-CyC" secondAttribute="bottomMargin" id="hcc-Pm-nIL"/>
-                            <constraint firstItem="6FA-pc-eQF" firstAttribute="trailing" secondItem="Xg0-C1-CyC" secondAttribute="trailing" constant="8" id="jbm-uY-N2J"/>
-                            <constraint firstItem="6FA-pc-eQF" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="8" id="kze-Pg-MY6"/>
-                            <constraint firstItem="6FA-pc-eQF" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="4" id="t64-ve-8iT"/>
-                            <constraint firstItem="6FA-pc-eQF" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="tBE-YY-o5J"/>
+                            <constraint firstItem="Xg0-C1-CyC" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="8" id="1fM-J5-vyH"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="Xg0-C1-CyC" secondAttribute="bottom" id="IQU-HE-Ebp"/>
+                            <constraint firstItem="6FA-pc-eQF" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="237" id="JAM-zj-amS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6FA-pc-eQF" secondAttribute="trailing" id="L1n-vj-PRD"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ssy-KU-ocm" secondAttribute="leading" id="Tmp-CP-MQA"/>
+                            <constraint firstItem="Xg0-C1-CyC" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" id="aGH-SL-f0a"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="Xg0-C1-CyC" secondAttribute="trailing" constant="8" id="aaX-Lk-RCe"/>
+                            <constraint firstItem="6FA-pc-eQF" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" constant="25" id="bHD-mb-zIQ"/>
+                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" constant="25" id="tac-M9-Ftl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="126"/>
+                    <size key="freeformSize" width="320" height="118"/>
                     <connections>
                         <outlet property="changePriceLabel" destination="6FA-pc-eQF" id="ldt-tN-KM8"/>
                         <outlet property="graphContainerView" destination="Xg0-C1-CyC" id="mbD-Vf-GE0"/>
