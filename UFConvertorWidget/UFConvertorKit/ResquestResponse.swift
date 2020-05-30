@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct RequestResponse: Codable {
+ struct RequestResponse: Codable {
     let serie: [Serie]
 }
 
 public struct Serie: Codable {
     let date: String
-    let value: Double
+   public let value: Double
     
     enum CodingKeys: String, CodingKey {
         case date = "fecha"

@@ -17,9 +17,14 @@ public final class RequestModel {
     
     var latestRateAndDate: LatestRateAndDate?
     
+    public let session: RequestInterface
+
     public var series: [Serie] = []
     
-    public init(){}
+    
+    public init(session: RequestInterface = URLSession.shared){
+        self.session = session
+    }
     
     public func convert(from: String, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
         
@@ -42,15 +47,14 @@ public final class RequestModel {
                 switch result {
                 case .success:
                     self.convert(from: from, then: then)
-                case .failure(_):
-                    //TODO: HANDLE ERROR
-                    break
+                case let .failure(error):
+                    then(.failure(error))
                 }
             })
         }
     }
     
-    func request(then: @escaping (Result<RequestResponse, Error>) -> Void) {
+    func request(then: @escaping (Result<RequestResponse, CurrencyConverterError>) -> Void) {
         
         var components = URLComponents()
         components.scheme = "https"
@@ -61,35 +65,20 @@ public final class RequestModel {
         let url = components.url!
         print(url)
         
-        //create the session object
-        let session = URLSession.shared
-        
         //now create the URLRequest object using the url object
         var urlRequest = URLRequest(url: url)
-        
         urlRequest.httpMethod = "GET"
         
         //TODO: wrap code inside a Result type for better error handling
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
-            
-            if let error = error as NSError? {
-                DispatchQueue.main.async {
-                    then(.failure(error))
-                }
-            }
-            
-            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
-                //TODO: handle error
-                return
-            }
-            
+            let statusCode = (response as! HTTPURLResponse).statusCode
             if statusCode == 200 {
                 //ok
                 guard let data = data,
                     let decodedResponse = try?
                         JSONDecoder().decode(RequestResponse.self, from: data) else {
                             DispatchQueue.main.async {
-                                then(.failure(error!))
+                                then(.failure(.invalidResponseFormat))
                             }
                             return
                 }
@@ -104,18 +93,10 @@ public final class RequestModel {
                     print(decodedResponse)
                 }
             } else {
-                guard let data = data,
-                    let decodedResponse = try?
-                        JSONDecoder().decode(RequestResponse.self, from: data) else {
-                            DispatchQueue.main.async {
-                                then(.failure(error!))
-                            }
-                            return
-                }
+                let nserror: NSError = error != nil ? error! as NSError : NSError(domain: "UFConvertorKit", code: 1, userInfo: [NSLocalizedDescriptionKey: "request error"])
                 
                 DispatchQueue.main.async {
-                    let error = NSError(domain: "test", code: 1, userInfo: [NSLocalizedDescriptionKey: decodedResponse.serie.description])
-                    then(.failure(error))
+                    then(.failure(.requestError(nserror)))
                 }
             }
         })
@@ -141,8 +122,8 @@ public final class RequestModel {
         return Double(currency)
     }
     
-    public func differenceValue() -> Int {
-        let difference = series[0].value - series[1].value
+    public func differenceValue(day1: Double, day2: Double) -> Int {
+        let difference = day1 - day2
         return Int(difference)
     }
 }

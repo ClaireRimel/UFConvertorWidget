@@ -12,7 +12,6 @@ import Foundation
 public enum CurrencyConverterError: Error, Equatable {
     case requestError(NSError)
     case invalidResponseFormat
-    case usdRateNotFound
     case invalidInput
 }
 
@@ -23,8 +22,6 @@ public extension CurrencyConverterError {
             return error.localizedDescription
         case .invalidResponseFormat:
             return "Le format de réponse du serveur est invalide "
-        case .usdRateNotFound:
-            return "La devise USD n'est pas disponible"
         case .invalidInput:
             return "Entrez un montant valide"
         }
