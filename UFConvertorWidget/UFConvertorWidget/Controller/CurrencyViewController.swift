@@ -30,7 +30,6 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         let chartview = LineChartView()
         chartview.backgroundColor = .clear
         chartview.rightAxis.enabled = false
-        chartview.leftAxis.enabled = false
         chartview.legend.enabled = false
         chartview.xAxis.enabled = false
         chartview.animate(xAxisDuration: 1.0)
@@ -95,7 +94,6 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         set1.mode = .linear
         set1.lineWidth = 3
         set1.setColor(.white)
-        set1.drawHorizontalHighlightIndicatorEnabled = false
         set1.highlightColor = .systemRed
         set1.highlightLineWidth = 2
         
