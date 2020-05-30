@@ -26,7 +26,7 @@ public final class RequestModel {
         self.session = session
     }
     
-    public func convert(from: String, then: @escaping (Result<Double, CurrencyConverterError>) -> Void) {
+    public func convert(from: String, then: @escaping (Result<Double, CurrencyConvertorError>) -> Void) {
         
         // Verify if the String can be converter to a Double, if not, a error message will be displayed.
         guard let value = convertToDouble(from: from)
@@ -54,7 +54,7 @@ public final class RequestModel {
         }
     }
     
-    func request(then: @escaping (Result<RequestResponse, CurrencyConverterError>) -> Void) {
+    func request(then: @escaping (Result<RequestResponse, CurrencyConvertorError>) -> Void) {
         
         var components = URLComponents()
         components.scheme = "https"

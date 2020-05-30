@@ -1,5 +1,5 @@
 //
-//  CurrencyConverterError.swift
+//  CurrencyConvorterError.swift
 //  UFConvertorWidget
 //
 //  Created by Claire on 15/05/2020.
@@ -9,13 +9,13 @@
 import Foundation
 
 //typed errors
-public enum CurrencyConverterError: Error, Equatable {
+public enum CurrencyConvertorError: Error, Equatable {
     case requestError(NSError)
     case invalidResponseFormat
     case invalidInput
 }
 
-public extension CurrencyConverterError {
+public extension CurrencyConvertorError {
      var message: String{
         switch self {
         case let .requestError(error):

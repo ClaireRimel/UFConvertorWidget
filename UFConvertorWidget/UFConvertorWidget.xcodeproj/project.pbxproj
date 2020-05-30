@@ -26,7 +26,7 @@
 		FA67B209247FC3A300110A73 /* UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; };
 		FA67B20A247FC3A300110A73 /* UFConvertorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA67B20E247FC55900110A73 /* ResquestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */; };
-		FA67B20F247FC56200110A73 /* CurrencyConverterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B873246F084600C6959E /* CurrencyConverterError.swift */; };
+		FA67B20F247FC56200110A73 /* CurrencyConvertorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B873246F084600C6959E /* CurrencyConvertorError.swift */; };
 		FA67B211247FEEEA00110A73 /* ConvertDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67B210247FEEEA00110A73 /* ConvertDouble.swift */; };
 		FA67B2132480238E00110A73 /* SetChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67B2122480238E00110A73 /* SetChart.swift */; };
 		FA67B2192480244A00110A73 /* Pods_UFwidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B2172480244A00110A73 /* Pods_UFwidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -133,7 +133,7 @@
 		FA30B866246F019800C6959E /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		FA30B869246F019800C6959E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		FA30B86B246F019800C6959E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA30B873246F084600C6959E /* CurrencyConverterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterError.swift; sourceTree = "<group>"; };
+		FA30B873246F084600C6959E /* CurrencyConvertorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorError.swift; sourceTree = "<group>"; };
 		FA3CA568248116B000F2B6B4 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		FA5741352481251400BAD968 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UFConvertorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,11 +242,36 @@
 		FA30B865246F019800C6959E /* UFwidget */ = {
 			isa = PBXGroup;
 			children = (
-				FA30B866246F019800C6959E /* TodayViewController.swift */,
-				FA30B868246F019800C6959E /* MainInterface.storyboard */,
+				FA5356B52482E00500D779EF /* View */,
+				FA5356B72482E02300D779EF /* Controller */,
 				FA30B86B246F019800C6959E /* Info.plist */,
 			);
 			path = UFwidget;
+			sourceTree = "<group>";
+		};
+		FA5356B42482DFE400D779EF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FA30B85B246EF41B00C6959E /* PresentMessage.swift */,
+				FA3CA568248116B000F2B6B4 /* RoundedButton.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FA5356B52482E00500D779EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA30B868246F019800C6959E /* MainInterface.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA5356B72482E02300D779EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA30B866246F019800C6959E /* TodayViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		FA67B1FD247FC31E00110A73 /* UFConvertorKit */ = {
@@ -254,7 +279,7 @@
 			children = (
 				FA8AB2F2246EC089007258A5 /* RequestModel.swift */,
 				FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */,
-				FA30B873246F084600C6959E /* CurrencyConverterError.swift */,
+				FA30B873246F084600C6959E /* CurrencyConvertorError.swift */,
 				FA67B210247FEEEA00110A73 /* ConvertDouble.swift */,
 				FA67B2122480238E00110A73 /* SetChart.swift */,
 				FA67B1FE247FC31E00110A73 /* UFConvertorKit.h */,
@@ -300,17 +325,15 @@
 		FA8AB2D4246EBFFC007258A5 /* UFConvertorWidget */ = {
 			isa = PBXGroup;
 			children = (
-				FA8AB2ED246EC028007258A5 /* Model */,
 				FA8AB2EC246EC026007258A5 /* View */,
 				FA8AB2E9246EC01D007258A5 /* Controller */,
+				FA5356B42482DFE400D779EF /* Sources */,
 				FA8AB2D5246EBFFC007258A5 /* AppDelegate.swift */,
 				FA8AB2D7246EBFFC007258A5 /* SceneDelegate.swift */,
 				FA8AB2DE246EC002007258A5 /* Assets.xcassets */,
 				FA5741352481251400BAD968 /* Color.xcassets */,
 				FA8AB2E0246EC002007258A5 /* LaunchScreen.storyboard */,
 				FA8AB2E3246EC002007258A5 /* Info.plist */,
-				FA30B85B246EF41B00C6959E /* PresentMessage.swift */,
-				FA3CA568248116B000F2B6B4 /* RoundedButton.swift */,
 			);
 			path = UFConvertorWidget;
 			sourceTree = "<group>";
@@ -329,13 +352,6 @@
 				FA8AB2DB246EBFFC007258A5 /* Main.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FA8AB2ED246EC028007258A5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -664,7 +680,7 @@
 			files = (
 				FA67B20E247FC55900110A73 /* ResquestResponse.swift in Sources */,
 				FA67B211247FEEEA00110A73 /* ConvertDouble.swift in Sources */,
-				FA67B20F247FC56200110A73 /* CurrencyConverterError.swift in Sources */,
+				FA67B20F247FC56200110A73 /* CurrencyConvertorError.swift in Sources */,
 				FA67B2132480238E00110A73 /* SetChart.swift in Sources */,
 				FA67B208247FC33300110A73 /* RequestModel.swift in Sources */,
 				FA2421172482677B00F60B2D /* RequestInterfaceProtocol.swift in Sources */,
