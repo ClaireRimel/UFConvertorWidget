@@ -27,9 +27,9 @@ public final class RequestModel {
     }
     
     public func convert(from: String, then: @escaping (Result<Double, CurrencyConvertorError>) -> Void) {
-        
+        let fromRemplaceWithDot  = from.replacingOccurrences(of: ",", with: ".")
         // Verify if the String can be converter to a Double, if not, a error message will be displayed.
-        guard let value = convertToDouble(from: from)
+        guard let value = convertToDouble(from: fromRemplaceWithDot)
             else {
                 then(.failure(.invalidInput))
                 return
