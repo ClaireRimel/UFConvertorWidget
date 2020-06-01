@@ -65,7 +65,7 @@
                                             <action selector="tappedGoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a43-Ex-Hq0"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-tk-X3o">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-tk-X3o">
                                         <rect key="frame" x="0.0" y="187" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -95,7 +95,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XB2-Ja-2d3" secondAttribute="trailing" constant="20" id="6ht-Tg-bC5"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7tx-wc-RkZ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="XB2-Ja-2d3" secondAttribute="bottom" constant="20" id="Fed-Nk-bWm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XB2-Ja-2d3" secondAttribute="bottom" constant="20" id="Fed-Nk-bWm"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wnR-w2-Dfw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

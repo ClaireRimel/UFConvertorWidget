@@ -50,8 +50,8 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         request()
         
         lineChartView.delegate = self
-        lineChartView.frame = graphContainerView.frame
-        lineChartView.frame.origin.y = 0
+        graphContainerView.addConstrained(subview: lineChartView)
+        
         graphContainerView.addSubview(lineChartView)
     }
     
@@ -72,7 +72,6 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
             case let .success(clpValue):
                 let value = ConvertDouble.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
                 self.clpValue.text = value
-                self.valueSelectedLabel.text = value
                 self.drawGraph()
                 self.date.text = "\(self.dateFormatter.string(from: Date()) )"
             case let .failure(error):
@@ -101,13 +100,25 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         set1.drawCirclesEnabled = false
         set1.mode = .linear
         set1.lineWidth = 3
-        set1.setColor(.white)
-        set1.highlightColor = .systemRed
+        set1.setColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        set1.highlightColor = #colorLiteral(red: 0.7908756137, green: 0.6883155107, blue: 0.47979635, alpha: 1)
         set1.highlightLineWidth = 2
+        set1.drawHorizontalHighlightIndicatorEnabled = false
         
         let data = LineChartData(dataSet: set1)
         data.setDrawValues(false)
         lineChartView.data = data
         
+    }
+}
+
+extension UIView {
+    func addConstrained(subview: UIView) {
+        addSubview(subview)
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        subview.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        subview.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        subview.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        subview.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
