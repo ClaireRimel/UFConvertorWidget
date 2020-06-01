@@ -65,8 +65,14 @@
                                             <action selector="tappedGoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a43-Ex-Hq0"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-tk-X3o">
+                                        <rect key="frame" x="0.0" y="187" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-ME-oHo">
-                                        <rect key="frame" x="0.0" y="187" width="374" height="591"/>
+                                        <rect key="frame" x="0.0" y="222.5" width="374" height="555.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="150" id="XHg-Fr-3yc"/>
                                         </constraints>
@@ -75,7 +81,7 @@
                                 <constraints>
                                     <constraint firstItem="Yrb-is-zGF" firstAttribute="height" secondItem="RDe-b9-gRD" secondAttribute="height" id="0a7-ki-cAb"/>
                                     <constraint firstItem="srj-1E-fuB" firstAttribute="height" secondItem="RDe-b9-gRD" secondAttribute="height" multiplier="1.05882" id="CYi-8c-b16"/>
-                                    <constraint firstItem="L2u-ME-oHo" firstAttribute="top" secondItem="srj-1E-fuB" secondAttribute="bottom" constant="15" id="mib-ie-c0N"/>
+                                    <constraint firstItem="L2u-ME-oHo" firstAttribute="top" secondItem="NA2-tk-X3o" secondAttribute="bottom" constant="15" id="mib-ie-c0N"/>
                                     <constraint firstAttribute="bottom" secondItem="L2u-ME-oHo" secondAttribute="bottom" id="rkN-fg-JxS"/>
                                 </constraints>
                             </stackView>
@@ -104,6 +110,7 @@
                         <outlet property="date" destination="P1n-vK-OM8" id="7LV-37-P7M"/>
                         <outlet property="graphContainerView" destination="L2u-ME-oHo" id="5Nr-kQ-I6f"/>
                         <outlet property="uFValue" destination="RDe-b9-gRD" id="Q2N-AK-Zgc"/>
+                        <outlet property="valueSelectedLabel" destination="NA2-tk-X3o" id="Exp-vj-oye"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

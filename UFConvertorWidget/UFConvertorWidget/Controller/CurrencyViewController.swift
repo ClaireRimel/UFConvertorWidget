@@ -17,6 +17,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var calculateButton: RoundButton!
     @IBOutlet var graphContainerView: UIView!
+    @IBOutlet var valueSelectedLabel: UILabel!
     
     let model = RequestModel()
     
@@ -90,7 +91,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     func drawGraph() {
         let setChart = SetChart(series: model.series)
         let set1 = LineChartDataSet(entries: setChart.chartData(), label: "CLP")
-        
+                    
         set1.drawCirclesEnabled = false
         set1.mode = .linear
         set1.lineWidth = 3
