@@ -14,6 +14,7 @@ public struct ConvertDouble {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = locale
+        numberFormatter.maximumFractionDigits = 2
         return numberFormatter.string(from: NSNumber(value: amount))!
     }
 }
