@@ -33,7 +33,8 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         chartview.legend.enabled = false
         chartview.xAxis.enabled = false
         chartview.animate(xAxisDuration: 1.0)
-        
+        chartview.setScaleEnabled(false)
+
         return chartview
     }()
     
