@@ -35,7 +35,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         chartview.xAxis.enabled = false
         chartview.animate(xAxisDuration: 1.0)
         chartview.setScaleEnabled(false)
-
+        
         return chartview
     }()
     
@@ -49,6 +49,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         // This function is called in viewDidLoad to ask the model the currency information of 1 EUR.
         request()
         
+        lineChartView.delegate = self
         lineChartView.frame = graphContainerView.frame
         lineChartView.frame.origin.y = 0
         graphContainerView.addSubview(lineChartView)
@@ -71,6 +72,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
             case let .success(clpValue):
                 let value = ConvertDouble.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
                 self.clpValue.text = value
+                self.valueSelectedLabel.text = value
                 self.drawGraph()
                 self.date.text = "\(self.dateFormatter.string(from: Date()) )"
             case let .failure(error):
@@ -84,14 +86,18 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         activityIndicator.isHidden = !shown
     }
     
+
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print(entry)
+        let valueY = ConvertDouble.convertDoubleToCurrency(amount: highlight.y, locale: Locale(identifier: "es_CL"))
+        
+        valueSelectedLabel.text = " \(valueY)"
     }
+    
     
     func drawGraph() {
         let setChart = SetChart(series: model.series)
         let set1 = LineChartDataSet(entries: setChart.chartData(), label: "CLP")
-                    
+        
         set1.drawCirclesEnabled = false
         set1.mode = .linear
         set1.lineWidth = 3
@@ -102,5 +108,6 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         let data = LineChartData(dataSet: set1)
         data.setDrawValues(false)
         lineChartView.data = data
+        
     }
 }

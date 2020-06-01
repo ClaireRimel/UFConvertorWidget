@@ -700,7 +700,6 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                 _isDragging = true
                 
                 _closestDataSetToTouch = getDataSetByTouchPoint(point: recognizer.nsuiLocationOfTouch(0, inView: self))
-                
                 var translation = recognizer.translation(in: self)
                 if !self.dragXEnabled
                 {
