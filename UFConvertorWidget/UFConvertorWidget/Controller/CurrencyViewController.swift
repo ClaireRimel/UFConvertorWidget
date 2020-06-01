@@ -42,17 +42,23 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        toggleActivityIndicator(shown: false)
-        uFValue.layer.cornerRadius = 17
         uFValue.text = "1"
-        clpValue.layer.cornerRadius = 17
-        // This function is called in viewDidLoad to ask the model the currency information of 1 EUR.
+        toggleActivityIndicator(shown: false)
+        setTextFieldUniformStyle(textField: uFValue)
+        setTextFieldUniformStyle(textField: clpValue)
+        
+        // This function is called in viewDidLoad to ask the model the currency information of 1 UF.
         request()
         
         lineChartView.delegate = self
         graphContainerView.addConstrained(subview: lineChartView)
-        
         graphContainerView.addSubview(lineChartView)
+    }
+    
+    func setTextFieldUniformStyle(textField: UITextField){
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: uFValue.frame.height))
+        textField.leftViewMode = .always
+        textField.layer.cornerRadius = 17
     }
     
     @IBAction func tappedGoButton(_ sender: Any) {
@@ -89,7 +95,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         let valueY = ConvertDouble.convertDoubleToCurrency(amount: highlight.y, locale: Locale(identifier: "es_CL"))
         
-        valueSelectedLabel.text = " \(valueY)"
+        valueSelectedLabel.text = "\(valueY)"
     }
     
     
@@ -108,7 +114,6 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         let data = LineChartData(dataSet: set1)
         data.setDrawValues(false)
         lineChartView.data = data
-        
     }
 }
 
