@@ -33,7 +33,7 @@
                                         </constraints>
                                         <color key="textColor" name="Sand"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="17"/>
@@ -72,7 +72,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-ME-oHo">
-                                        <rect key="frame" x="0.0" y="222.5" width="374" height="555.5"/>
+                                        <rect key="frame" x="0.0" y="223.5" width="374" height="554.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="150" id="XHg-Fr-3yc"/>
                                         </constraints>
