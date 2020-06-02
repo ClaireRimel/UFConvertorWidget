@@ -17,21 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-Ja-2d3">
-                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <rect key="frame" x="20" y="68" width="374" height="794"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1n-vK-OM8">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="23.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                        <color key="textColor" name="ButtonColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" name="PinkBackground"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UF" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RDe-b9-gRD">
-                                        <rect key="frame" x="0.0" y="38.5" width="374" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UF" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDe-b9-gRD">
+                                        <rect key="frame" x="0.0" y="46.5" width="374" height="40"/>
                                         <color key="backgroundColor" name="GrayTextFiel"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="vXM-2S-bHD"/>
+                                            <constraint firstAttribute="height" constant="40" id="vXM-2S-bHD"/>
                                         </constraints>
-                                        <color key="textColor" name="Sand"/>
+                                        <color key="textColor" name="BleuBackground"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <userDefinedRuntimeAttributes>
@@ -42,9 +42,9 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CLP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-is-zGF">
-                                        <rect key="frame" x="0.0" y="87.5" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="101.5" width="374" height="40"/>
                                         <color key="backgroundColor" name="GrayTextFiel"/>
-                                        <color key="textColor" name="Sand"/>
+                                        <color key="textColor" name="BleuBackground"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -55,34 +55,36 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srj-1E-fuB" customClass="RoundButton" customModule="UFConvertorWidget" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="136.5" width="374" height="36"/>
-                                        <color key="backgroundColor" name="ButtonColor"/>
+                                        <rect key="frame" x="0.0" y="156.5" width="374" height="42.5"/>
+                                        <color key="backgroundColor" name="PinkBackground"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="GO">
-                                            <color key="titleColor" name="BackGround"/>
+                                            <color key="titleColor" name="BleuBackground"/>
                                         </state>
                                         <connections>
                                             <action selector="tappedGoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a43-Ex-Hq0"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-tk-X3o">
-                                        <rect key="frame" x="0.0" y="187.5" width="374" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2345678" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-tk-X3o">
+                                        <rect key="frame" x="0.0" y="214" width="374" height="115"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" name="PinkBackground"/>
                                         <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-ME-oHo">
-                                        <rect key="frame" x="0.0" y="223.5" width="374" height="554.5"/>
+                                        <rect key="frame" x="0.0" y="344" width="374" height="450"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="150" id="XHg-Fr-3yc"/>
+                                            <constraint firstAttribute="height" priority="999" constant="450" id="DYH-qq-nYf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Yrb-is-zGF" firstAttribute="height" secondItem="RDe-b9-gRD" secondAttribute="height" id="0a7-ki-cAb"/>
                                     <constraint firstItem="srj-1E-fuB" firstAttribute="height" secondItem="RDe-b9-gRD" secondAttribute="height" multiplier="1.05882" id="CYi-8c-b16"/>
-                                    <constraint firstItem="L2u-ME-oHo" firstAttribute="top" secondItem="NA2-tk-X3o" secondAttribute="bottom" constant="15" id="mib-ie-c0N"/>
-                                    <constraint firstAttribute="bottom" secondItem="L2u-ME-oHo" secondAttribute="bottom" id="rkN-fg-JxS"/>
+                                    <constraint firstAttribute="bottom" secondItem="L2u-ME-oHo" secondAttribute="bottom" id="EaJ-1e-bgz"/>
+                                    <constraint firstAttribute="bottom" secondItem="L2u-ME-oHo" secondAttribute="bottom" id="HN2-1s-KQF"/>
                                 </constraints>
                             </stackView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-mD-tRf">
@@ -90,13 +92,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" name="BackGround"/>
+                        <color key="backgroundColor" name="BleuBackground"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XB2-Ja-2d3" secondAttribute="trailing" constant="20" id="6ht-Tg-bC5"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7tx-wc-RkZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XB2-Ja-2d3" secondAttribute="bottom" constant="20" id="Fed-Nk-bWm"/>
-                            <constraint firstItem="XB2-Ja-2d3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="wnR-w2-Dfw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XB2-Ja-2d3" secondAttribute="bottom" id="Fed-Nk-bWm"/>
+                            <constraint firstItem="XB2-Ja-2d3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="wnR-w2-Dfw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -114,23 +116,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="czN-dQ-wBC"/>
+                <tapGestureRecognizer id="czN-dQ-wBC">
+                    <connections>
+                        <action selector="dissmissKeyboard:" destination="BYZ-38-t0r" id="1MN-bL-VdU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="BackGround">
-            <color red="0.96700000762939453" green="0.85600000619888306" blue="0.79199999570846558" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="ButtonColor">
-            <color red="0.090196078431372548" green="0.10588235294117647" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="BleuBackground">
+            <color red="0.14656043050000001" green="0.15282106400000001" blue="0.25962978599999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="GrayTextFiel">
-            <color red="0.6809999942779541" green="0.61599999666213989" blue="0.58799999952316284" alpha="0.85799998044967651" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.70980392156862748" green="0.74939608570000005" blue="0.79504060750000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Sand">
-            <color red="0.94117647058823528" green="0.88627450980392153" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="PinkBackground">
+            <color red="0.94625085590000002" green="0.77446122169494624" blue="0.70798259969999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

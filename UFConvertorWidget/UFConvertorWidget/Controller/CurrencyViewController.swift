@@ -35,6 +35,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         chartview.xAxis.enabled = false
         chartview.animate(xAxisDuration: 1.0)
         chartview.setScaleEnabled(false)
+        chartview.leftAxis.labelTextColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         
         return chartview
     }()
@@ -42,7 +43,18 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        overrideUserInterfaceStyle = .dark
+        
+        view.setGradientBackground(colorOne: #colorLiteral(red: 0.08630939573, green: 0.1065077558, blue: 0.1527832747, alpha: 1), colorTwo: #colorLiteral(red: 0.1465604305, green: 0.152821064, blue: 0.259629786, alpha: 1), colorThree: #colorLiteral(red: 0.2043941617, green: 0.22268641, blue: 0.4445173442, alpha: 1))
+        graphContainerView.setGradientBackground(colorOne: #colorLiteral(red: 0.9243683219, green: 0.6917772174, blue: 0.5800408721, alpha: 1), colorTwo: #colorLiteral(red: 0.9462508559, green: 0.7744612217, blue: 0.7079825997, alpha: 1), colorThree: #colorLiteral(red: 0.9896637797, green: 0.8509680629, blue: 0.7825837731, alpha: 1))
+        graphContainerView.layer.cornerRadius = 16
+        graphContainerView.clipsToBounds = true
+        
         uFValue.text = "1"
+        valueSelectedLabel.text = " "
+        uFValue.tintColor = #colorLiteral(red: 0.1465604305, green: 0.152821064, blue: 0.259629786, alpha: 1)
+        uFValue.clearButtonMode = .whileEditing
+        
         toggleActivityIndicator(shown: false)
         setTextFieldUniformStyle(textField: uFValue)
         setTextFieldUniformStyle(textField: clpValue)
@@ -90,14 +102,12 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         calculateButton.isHidden = shown
         activityIndicator.isHidden = !shown
     }
-    
 
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         let valueY = ConvertDouble.convertDoubleToCurrency(amount: highlight.y, locale: Locale(identifier: "es_CL"))
         
         valueSelectedLabel.text = "\(valueY)"
     }
-    
     
     func drawGraph() {
         let setChart = SetChart(series: model.series)
@@ -106,8 +116,8 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         set1.drawCirclesEnabled = false
         set1.mode = .linear
         set1.lineWidth = 3
-        set1.setColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
-        set1.highlightColor = #colorLiteral(red: 0.7908756137, green: 0.6883155107, blue: 0.47979635, alpha: 1)
+        set1.setColor(#colorLiteral(red: 0.6375279427, green: 0.6473982334, blue: 0.7130541086, alpha: 1))
+        set1.highlightColor = #colorLiteral(red: 0.08630939573, green: 0.1065077558, blue: 0.1527832747, alpha: 1)
         set1.highlightLineWidth = 2
         set1.drawHorizontalHighlightIndicatorEnabled = false
         
@@ -126,4 +136,15 @@ extension UIView {
         subview.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         subview.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
+    
+    func setGradientBackground(colorOne: UIColor, colorTwo: UIColor, colorThree: UIColor) {
+           let gradientLayer = CAGradientLayer()
+           gradientLayer.frame = bounds
+           gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor, colorThree.cgColor]
+           gradientLayer.startPoint = CGPoint(x: 1.0, y: 1.0)
+           gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
+
+           layer.insertSublayer(gradientLayer, at: 0)
+       }
 }
+
