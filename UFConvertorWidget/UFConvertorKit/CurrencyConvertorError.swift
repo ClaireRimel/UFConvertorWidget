@@ -21,9 +21,9 @@ public extension CurrencyConvertorError {
         case let .requestError(error):
             return error.localizedDescription
         case .invalidResponseFormat:
-            return "Le format de réponse du serveur est invalide "
+            return "El formato de respuesta del servidor no es válido"
         case .invalidInput:
-            return "Entrez un montant valide"
+            return "Ingrese una cantidad válida"
         }
     }
 }
