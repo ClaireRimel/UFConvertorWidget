@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		058F8753FBC1C77AE94BB7F1 /* Pods_UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFD5D0278B32E879A15A79F /* Pods_UFConvertorKit.framework */; };
-		64242676CDBD403BB91FC47D /* Pods_UFConvertorKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912F42BB0AA05D4464FCC33C /* Pods_UFConvertorKitTests.framework */; };
-		F11ACCF591A85867552E0DFF /* Pods_UFwidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E577752AFA279485AEA666 /* Pods_UFwidget.framework */; };
 		FA24210E248262B200F60B2D /* UFConvertorKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24210D248262B200F60B2D /* UFConvertorKitTests.swift */; };
 		FA242110248262B200F60B2D /* UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; platformFilter = ios; };
 		FA2421172482677B00F60B2D /* RequestInterfaceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2421162482677B00F60B2D /* RequestInterfaceProtocol.swift */; };
@@ -44,6 +41,9 @@
 		FAE8A510248E514000D5A4E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAE8A512248E514000D5A4E1 /* Localizable.strings */; };
 		FAE8A516248E52E000D5A4E1 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8A515248E52E000D5A4E1 /* BundleExtension.swift */; };
 		FAE8A518248E532200D5A4E1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8A517248E532200D5A4E1 /* StringExtension.swift */; };
+		FAE8A51A248E977700D5A4E1 /* Pods_UFConvertorKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912F42BB0AA05D4464FCC33C /* Pods_UFConvertorKitTests.framework */; };
+		FAE8A51B248E977E00D5A4E1 /* Pods_UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFD5D0278B32E879A15A79F /* Pods_UFConvertorKit.framework */; };
+		FAE8A51D248E979A00D5A4E1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2E3246EC002007258A5 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA242110248262B200F60B2D /* UFConvertorKit.framework in Frameworks */,
-				64242676CDBD403BB91FC47D /* Pods_UFConvertorKitTests.framework in Frameworks */,
+				FAE8A51A248E977700D5A4E1 /* Pods_UFConvertorKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +187,6 @@
 			files = (
 				FA67B209247FC3A300110A73 /* UFConvertorKit.framework in Frameworks */,
 				FAE609F0247ED5E700EB6777 /* NotificationCenter.framework in Frameworks */,
-				F11ACCF591A85867552E0DFF /* Pods_UFwidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058F8753FBC1C77AE94BB7F1 /* Pods_UFConvertorKit.framework in Frameworks */,
+				FAE8A51B248E977E00D5A4E1 /* Pods_UFConvertorKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +526,7 @@
 			files = (
 				FA67E54A247D760E008F6A1F /* Assets.xcassets in Resources */,
 				FA30B86A246F019800C6959E /* MainInterface.storyboard in Resources */,
+				FAE8A51D248E979A00D5A4E1 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
