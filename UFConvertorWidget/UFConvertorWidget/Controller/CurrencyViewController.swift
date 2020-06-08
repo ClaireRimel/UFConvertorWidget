@@ -21,11 +21,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     
     let model = RequestModel()
     
-    lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter
-    }()
+    lazy var localizedDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
     
     lazy var lineChartView: LineChartView = {
         let chartview = LineChartView()
@@ -64,6 +60,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         request()
         
         lineChartView.delegate = self
+        uFValue.delegate = self
         graphContainerView.addConstrained(subview: lineChartView)
         graphContainerView.addSubview(lineChartView)
     }
@@ -73,7 +70,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         textField.leftViewMode = .always
         textField.layer.cornerRadius = 17
     }
-    
+
     @IBAction func tappedGoButton(_ sender: Any) {
         toggleActivityIndicator(shown: true)
         view.endEditing(true)
@@ -92,7 +89,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
                 let value = ConvertDouble.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
                 self.clpValue.text = value
                 self.drawGraph()
-                self.date.text = "\(self.dateFormatter.string(from: Date()) )"
+                self.date.text = "\(self.localizedDate)"
             case let .failure(error):
                 self.presentUIAlert(message: error.message)
             }
@@ -149,3 +146,14 @@ extension UIView {
        }
 }
 
+extension CurrencyViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        
+        guard let stringRange = Swift.Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        return updatedText.count <= 20
+    }
+}
