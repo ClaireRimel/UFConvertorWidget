@@ -1,0 +1,10 @@
+/*
+  Localizable.strings
+  UFConvertorWidget
+
+  Created by Claire on 08/06/2020.
+  Copyright © 2020 Claire Sivadier. All rights reserved.
+*/
+
+"Error" = "Error";
+"Convert" = "Convert";
