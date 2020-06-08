@@ -21,12 +21,10 @@
 		FA67B204247FC31E00110A73 /* UFConvertorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA67B208247FC33300110A73 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2F2246EC089007258A5 /* RequestModel.swift */; };
 		FA67B209247FC3A300110A73 /* UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; };
-		FA67B20A247FC3A300110A73 /* UFConvertorKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA67B20E247FC55900110A73 /* ResquestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */; };
 		FA67B20F247FC56200110A73 /* CurrencyConvertorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30B873246F084600C6959E /* CurrencyConvertorError.swift */; };
 		FA67B211247FEEEA00110A73 /* ConvertDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67B210247FEEEA00110A73 /* ConvertDouble.swift */; };
 		FA67B2132480238E00110A73 /* SetChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67B2122480238E00110A73 /* SetChart.swift */; };
-		FA67B2192480244A00110A73 /* Pods_UFwidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA67B2172480244A00110A73 /* Pods_UFwidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA67E54A247D760E008F6A1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DE246EC002007258A5 /* Assets.xcassets */; };
 		FA8AB2D6246EBFFC007258A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2D5246EBFFC007258A5 /* AppDelegate.swift */; };
 		FA8AB2D8246EBFFC007258A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB2D7246EBFFC007258A5 /* SceneDelegate.swift */; };
@@ -35,7 +33,6 @@
 		FA8AB2DF246EC002007258A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DE246EC002007258A5 /* Assets.xcassets */; };
 		FA8AB2E2246EC002007258A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2E0246EC002007258A5 /* LaunchScreen.storyboard */; };
 		FAE609ED247ED5C500EB6777 /* Pods_UFConvertorWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */; };
-		FAE609EE247ED5C500EB6777 /* Pods_UFConvertorWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FAE609F0247ED5E700EB6777 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA30B863246F019800C6959E /* NotificationCenter.framework */; };
 		FAE8A509248E502D00D5A4E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAE8A50B248E502D00D5A4E1 /* Localizable.strings */; };
 		FAE8A510248E514000D5A4E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAE8A512248E514000D5A4E1 /* Localizable.strings */; };
@@ -43,7 +40,6 @@
 		FAE8A518248E532200D5A4E1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8A517248E532200D5A4E1 /* StringExtension.swift */; };
 		FAE8A51A248E977700D5A4E1 /* Pods_UFConvertorKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912F42BB0AA05D4464FCC33C /* Pods_UFConvertorKitTests.framework */; };
 		FAE8A51B248E977E00D5A4E1 /* Pods_UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFD5D0278B32E879A15A79F /* Pods_UFConvertorKit.framework */; };
-		FAE8A51D248E979A00D5A4E1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2E3246EC002007258A5 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,25 +85,12 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA67B20D247FC3A300110A73 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				FA67B20A247FC3A300110A73 /* UFConvertorKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FAE609EF247ED5C500EB6777 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FAE609EE247ED5C500EB6777 /* Pods_UFConvertorWidget.framework in Embed Frameworks */,
-				FA67B2192480244A00110A73 /* Pods_UFwidget.framework in Embed Frameworks */,
 				FA67B204247FC31E00110A73 /* UFConvertorKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -411,7 +394,6 @@
 				FA30B85D246F019800C6959E /* Sources */,
 				FA30B85E246F019800C6959E /* Frameworks */,
 				FA30B85F246F019800C6959E /* Resources */,
-				FA67B20D247FC3A300110A73 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -526,7 +508,6 @@
 			files = (
 				FA67E54A247D760E008F6A1F /* Assets.xcassets in Resources */,
 				FA30B86A246F019800C6959E /* MainInterface.storyboard in Resources */,
-				FAE8A51D248E979A00D5A4E1 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,6 +791,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -830,6 +812,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -849,7 +832,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorWidget.UFwidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -869,7 +852,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorWidget.UFwidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -993,6 +976,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1047,6 +1031,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -1070,6 +1055,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1092,6 +1078,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
