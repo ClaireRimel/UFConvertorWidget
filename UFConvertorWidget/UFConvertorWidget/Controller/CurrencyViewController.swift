@@ -44,6 +44,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         overrideUserInterfaceStyle = .dark
+        calculateButton.setTitle(NSLocalizedString("Convert", comment: ""), for: .normal)
         
         view.setGradientBackground(colorOne: #colorLiteral(red: 0.08630939573, green: 0.1065077558, blue: 0.1527832747, alpha: 1), colorTwo: #colorLiteral(red: 0.1465604305, green: 0.152821064, blue: 0.259629786, alpha: 1), colorThree: #colorLiteral(red: 0.2043941617, green: 0.22268641, blue: 0.4445173442, alpha: 1))
         graphContainerView.setGradientBackground(colorOne: #colorLiteral(red: 0.9243683219, green: 0.6917772174, blue: 0.5800408721, alpha: 1), colorTwo: #colorLiteral(red: 0.9462508559, green: 0.7744612217, blue: 0.7079825997, alpha: 1), colorThree: #colorLiteral(red: 0.9896637797, green: 0.8509680629, blue: 0.7825837731, alpha: 1))
