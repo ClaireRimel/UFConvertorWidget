@@ -64,6 +64,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         request()
         
         lineChartView.delegate = self
+        uFValue.delegate = self
         graphContainerView.addConstrained(subview: lineChartView)
         graphContainerView.addSubview(lineChartView)
     }
@@ -73,7 +74,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         textField.leftViewMode = .always
         textField.layer.cornerRadius = 17
     }
-    
+
     @IBAction func tappedGoButton(_ sender: Any) {
         toggleActivityIndicator(shown: true)
         view.endEditing(true)
@@ -149,3 +150,14 @@ extension UIView {
        }
 }
 
+extension CurrencyViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        
+        guard let stringRange = Swift.Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        return updatedText.count <= 20
+    }
+}
