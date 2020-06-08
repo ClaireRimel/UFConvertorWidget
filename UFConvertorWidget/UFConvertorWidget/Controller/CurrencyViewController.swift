@@ -21,11 +21,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     
     let model = RequestModel()
     
-    lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter
-    }()
+    lazy var localizedDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
     
     lazy var lineChartView: LineChartView = {
         let chartview = LineChartView()
@@ -93,7 +89,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
                 let value = ConvertDouble.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
                 self.clpValue.text = value
                 self.drawGraph()
-                self.date.text = "\(self.dateFormatter.string(from: Date()) )"
+                self.date.text = "\(self.localizedDate)"
             case let .failure(error):
                 self.presentUIAlert(message: error.message)
             }
