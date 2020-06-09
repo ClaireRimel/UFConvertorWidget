@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-Ja-2d3">
-                                <rect key="frame" x="20" y="68" width="374" height="794"/>
+                                <rect key="frame" x="20" y="68" width="374" height="784"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1n-vK-OM8">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" name="PinkBackground"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UF" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDe-b9-gRD">
-                                        <rect key="frame" x="0.0" y="46.5" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="43" width="374" height="40"/>
                                         <color key="backgroundColor" name="GrayTextFiel"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="vXM-2S-bHD"/>
@@ -42,7 +42,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CLP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-is-zGF">
-                                        <rect key="frame" x="0.0" y="101.5" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="98" width="374" height="40"/>
                                         <color key="backgroundColor" name="GrayTextFiel"/>
                                         <color key="textColor" name="BleuBackground"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -55,7 +55,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srj-1E-fuB" customClass="RoundButton" customModule="UFConvertorWidget" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="156.5" width="374" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="153" width="374" height="42.5"/>
                                         <color key="backgroundColor" name="PinkBackground"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="GO">
@@ -66,17 +66,17 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2345678" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA2-tk-X3o">
-                                        <rect key="frame" x="0.0" y="214" width="374" height="115"/>
+                                        <rect key="frame" x="0.0" y="210.5" width="374" height="28.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" name="PinkBackground"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-ME-oHo">
-                                        <rect key="frame" x="0.0" y="344" width="374" height="450"/>
+                                        <rect key="frame" x="0.0" y="254" width="374" height="530"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" priority="999" constant="450" id="DYH-qq-nYf"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="300" id="DYH-qq-nYf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -97,7 +97,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XB2-Ja-2d3" secondAttribute="trailing" constant="20" id="6ht-Tg-bC5"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7tx-wc-RkZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XB2-Ja-2d3" secondAttribute="bottom" id="Fed-Nk-bWm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XB2-Ja-2d3" secondAttribute="bottom" constant="10" id="Fed-Nk-bWm"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="wnR-w2-Dfw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -105,13 +105,23 @@ public final class RequestModel {
     
     // Use to format today's date and compare it with a given date
     func wasRequestMadeToday(requestDate: String) -> Bool {
-        
         let format = DateFormatter()
+        format.timeZone = TimeZone(abbreviation: "CLT")
         format.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
-        if let dateToCompare = format.date(from: requestDate) {
-            if Calendar.current.compare(Date(), to: dateToCompare, toGranularity: .day) == .orderedSame {
+        let localDate =  format.string(from: Date())
+        
+        var calender = Calendar.current
+        calender.timeZone = TimeZone.init(abbreviation: "CLT") ?? TimeZone.current
+
+        if let dateToCompare = format.date(from: requestDate),
+            let todayDate = format.date(from: localDate) {
+            
+            let result = calender.compare(dateToCompare, to: todayDate, toGranularity: .day)
+            if result == .orderedSame {
                 return true
+            } else {
+                return false
             }
         }
         return false
