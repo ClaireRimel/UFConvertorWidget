@@ -33,6 +33,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         chartview.animate(xAxisDuration: 1.0)
         chartview.setScaleEnabled(false)
         chartview.leftAxis.labelTextColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        chartview.leftAxis.labelFont = .boldSystemFont(ofSize: 12)
         
         return chartview
     }()
@@ -72,27 +73,15 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         textField.layer.cornerRadius = 17
     }
 
-    @IBAction func cLPChanged(_ sender: Any) {
+    @IBAction func clpChanged(_ sender: UITextField) {
         if clpValue.text != nil {
-            let result =  model.cLPToUF(clp: clpValue.text ?? "1")
-             uFValue.text = "\(result)"
-        } else {
-            self.presentUIAlert(message: "Error")
-        }
+                   let result =  model.cLPToUF(clp: clpValue.text ?? "1")
+                    uFValue.text = "\(result)"
+               } else {
+                   self.presentUIAlert(message: "Error")
+               }
     }
     
-//    @IBAction func clpChanged(_ sender: Any) {
-//        if clpValue.text != nil {
-//                   let result =  model.cLPToUF(clp: clpValue.text ?? "1")
-//                    uFValue.text = "\(result)"
-//               } else {
-//                   self.presentUIAlert(message: "Error")
-//               }
-//    }
-    //
-//    @IBAction func uFChanged(_ sender: Any) {
-//    }
-//
     @IBAction func tappedGoButton(_ sender: Any) {
         toggleActivityIndicator(shown: true)
         view.endEditing(true)
