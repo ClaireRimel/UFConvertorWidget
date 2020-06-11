@@ -33,6 +33,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         chartview.animate(xAxisDuration: 1.0)
         chartview.setScaleEnabled(false)
         chartview.leftAxis.labelTextColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        chartview.leftAxis.labelFont = .boldSystemFont(ofSize: 12)
         
         return chartview
     }()
