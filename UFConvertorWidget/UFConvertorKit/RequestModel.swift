@@ -138,9 +138,12 @@ public final class RequestModel {
     }
     
     public func cLPToUF(clp: String) -> Double {
-        guard let clpValue = convertToDouble(from: clp), latestRateAndDate?.clpRate != nil  else {
+        let fromRemplaceWithDot  = clp.replacingOccurrences(of: ",", with: ".")
+
+        guard let clpValue = convertToDouble(from: fromRemplaceWithDot), latestRateAndDate?.clpRate != nil  else {
             return 0
         }
+        
         let result = (clpValue * 1)/latestRateAndDate!.clpRate
         
         return result
