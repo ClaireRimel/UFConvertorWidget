@@ -18,7 +18,7 @@ public final class RequestModel {
     var latestRateAndDate: LatestRateAndDate?
     
     public let session: RequestInterface
-
+    
     public var series: [Serie] = []
     
     
@@ -113,7 +113,7 @@ public final class RequestModel {
         
         var calender = Calendar.current
         calender.timeZone = TimeZone.init(abbreviation: "CLT") ?? TimeZone.current
-
+        
         if let dateToCompare = format.date(from: requestDate),
             let todayDate = format.date(from: localDate) {
             
@@ -135,5 +135,14 @@ public final class RequestModel {
     public func differenceValue(day1: Double, day2: Double) -> Int {
         let difference = day1 - day2
         return Int(difference)
+    }
+    
+    public func cLPToUF(clp: String) -> Double {
+        guard let clpValue = convertToDouble(from: clp), latestRateAndDate?.clpRate != nil  else {
+            return 0
+        }
+        let result = (clpValue * 1)/latestRateAndDate!.clpRate
+        
+        return result
     }
 }

@@ -21,6 +21,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     
     let model = RequestModel()
     
+    
     lazy var localizedDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
     
     lazy var lineChartView: LineChartView = {
@@ -71,9 +72,31 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         textField.layer.cornerRadius = 17
     }
 
+    @IBAction func cLPChanged(_ sender: Any) {
+        if clpValue.text != nil {
+            let result =  model.cLPToUF(clp: clpValue.text ?? "1")
+             uFValue.text = "\(result)"
+        } else {
+            self.presentUIAlert(message: "Error")
+        }
+    }
+    
+//    @IBAction func clpChanged(_ sender: Any) {
+//        if clpValue.text != nil {
+//                   let result =  model.cLPToUF(clp: clpValue.text ?? "1")
+//                    uFValue.text = "\(result)"
+//               } else {
+//                   self.presentUIAlert(message: "Error")
+//               }
+//    }
+    //
+//    @IBAction func uFChanged(_ sender: Any) {
+//    }
+//
     @IBAction func tappedGoButton(_ sender: Any) {
         toggleActivityIndicator(shown: true)
         view.endEditing(true)
+                
         request()
     }
     
