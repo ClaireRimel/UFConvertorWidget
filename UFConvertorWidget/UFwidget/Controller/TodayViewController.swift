@@ -51,14 +51,17 @@ class TodayViewController: UIViewController, NCWidgetProviding, ChartViewDelegat
             case let .success(clpValue):
                 let value = ConvertDouble.convertDoubleToCurrency(amount: clpValue, locale: Locale(identifier: "es_CL"))
                 self.priceLabel.text = value
-                let diffenceValue = self.model.differenceValue(day1: self.model.series[0].value, day2: self.model.series[1].value)
+                let day2 = self.model.series[1].value
+                let day1 = self.model.series[0].value
+                let diffenceValue = self.model.differenceValue(day1: day1, day2: day2)
+                let formatted = String(format: "%.2f", diffenceValue)
                 if diffenceValue < 0 {
-                    self.changePriceLabel.text = "\(diffenceValue)"
+                    self.changePriceLabel.text =  formatted
                     self.changePriceLabel.textColor = .red
                 } else if diffenceValue == 0 {
                     self.changePriceLabel.text = "\(diffenceValue)"
                 } else {
-                    self.changePriceLabel.text = "+ \(diffenceValue)"
+                    self.changePriceLabel.text = "+ \(formatted)"
                     self.changePriceLabel.textColor = .green
                 }
                 self.drawGraph()
