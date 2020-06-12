@@ -143,6 +143,7 @@
 		FA8AB2E3246EC002007258A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResquestResponse.swift; sourceTree = "<group>"; };
 		FA8AB2F2246EC089007258A5 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		FAC2E7BC2493DEAB00D98A83 /* UFConvertorWidgetRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UFConvertorWidgetRelease.entitlements; sourceTree = "<group>"; };
 		FAE8A50A248E502D00D5A4E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAE8A50C248E504000D5A4E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAE8A50D248E50C100D5A4E1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -323,6 +324,7 @@
 		FA8AB2D4246EBFFC007258A5 /* UFConvertorWidget */ = {
 			isa = PBXGroup;
 			children = (
+				FAC2E7BC2493DEAB00D98A83 /* UFConvertorWidgetRelease.entitlements */,
 				FA8AB2EC246EC026007258A5 /* View */,
 				FA8AB2E9246EC01D007258A5 /* Controller */,
 				FA5356B42482DFE400D779EF /* Sources */,
@@ -1070,6 +1072,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UFConvertorWidget/UFConvertorWidgetRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = BDMB887655;

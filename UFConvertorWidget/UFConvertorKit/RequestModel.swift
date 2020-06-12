@@ -132,9 +132,9 @@ public final class RequestModel {
         return Double(currency)
     }
     
-    public func differenceValue(day1: Double, day2: Double) -> Int {
+    public func differenceValue(day1: Double, day2: Double) -> Double {
         let difference = day1 - day2
-        return Int(difference)
+        return Double(difference)
     }
     
     public func cLPToUF(clp: String) -> Double {
