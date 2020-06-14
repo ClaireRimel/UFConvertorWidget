@@ -20,6 +20,7 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     @IBOutlet var valueSelectedLabel: UILabel!
     
     let model = RequestModel()
+    let notificationService = ScheduleNotification()
     
     
     lazy var localizedDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
@@ -65,6 +66,15 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         uFValue.delegate = self
         graphContainerView.addConstrained(subview: lineChartView)
         graphContainerView.addSubview(lineChartView)
+        
+        //TODO: dothe permission after doing the firts convertion
+        notificationService.askPermission(completion: { [weak self] error in
+            if let error = error {
+                self?.presentUIAlert(message: error.localizedDescription)
+            } else {
+                self?.notificationService.scheduleNotification()
+            }
+        })
     }
     
     func setTextFieldUniformStyle(textField: UITextField){

@@ -32,6 +32,7 @@
 		FA8AB2DD246EBFFC007258A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DB246EBFFC007258A5 /* Main.storyboard */; };
 		FA8AB2DF246EC002007258A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DE246EC002007258A5 /* Assets.xcassets */; };
 		FA8AB2E2246EC002007258A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2E0246EC002007258A5 /* LaunchScreen.storyboard */; };
+		FAC2E7C32493F12B00D98A83 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */; };
 		FAE609ED247ED5C500EB6777 /* Pods_UFConvertorWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */; };
 		FAE609F0247ED5E700EB6777 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA30B863246F019800C6959E /* NotificationCenter.framework */; };
 		FAE8A509248E502D00D5A4E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAE8A50B248E502D00D5A4E1 /* Localizable.strings */; };
@@ -144,6 +145,7 @@
 		FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResquestResponse.swift; sourceTree = "<group>"; };
 		FA8AB2F2246EC089007258A5 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		FAC2E7BC2493DEAB00D98A83 /* UFConvertorWidgetRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UFConvertorWidgetRelease.entitlements; sourceTree = "<group>"; };
+		FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
 		FAE8A50A248E502D00D5A4E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAE8A50C248E504000D5A4E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAE8A50D248E50C100D5A4E1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC2E7BC2493DEAB00D98A83 /* UFConvertorWidgetRelease.entitlements */,
+				FAC2E7C12493F0ED00D98A83 /* Model */,
 				FA8AB2EC246EC026007258A5 /* View */,
 				FA8AB2E9246EC01D007258A5 /* Controller */,
 				FA5356B42482DFE400D779EF /* Sources */,
@@ -352,6 +355,14 @@
 				FA8AB2DB246EBFFC007258A5 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FAC2E7C12493F0ED00D98A83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -699,6 +710,7 @@
 				FA8AB2DA246EBFFC007258A5 /* CurrencyViewController.swift in Sources */,
 				FA3CA569248116B000F2B6B4 /* RoundedButton.swift in Sources */,
 				FA8AB2D6246EBFFC007258A5 /* AppDelegate.swift in Sources */,
+				FAC2E7C32493F12B00D98A83 /* ScheduleNotification.swift in Sources */,
 				FA8AB2D8246EBFFC007258A5 /* SceneDelegate.swift in Sources */,
 				FA30B85C246EF41B00C6959E /* PresentMessage.swift in Sources */,
 			);
