@@ -93,9 +93,8 @@
                                     <constraint firstAttribute="bottom" secondItem="L2u-ME-oHo" secondAttribute="bottom" id="HN2-1s-KQF"/>
                                 </constraints>
                             </stackView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-mD-tRf">
-                                <rect key="frame" x="197" y="716" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-mD-tRf">
+                                <rect key="frame" x="197" y="232" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="BleuBackground"/>
@@ -104,7 +103,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XB2-Ja-2d3" secondAttribute="trailing" constant="20" id="6ht-Tg-bC5"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7tx-wc-RkZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XB2-Ja-2d3" secondAttribute="bottom" constant="10" id="Fed-Nk-bWm"/>
+                            <constraint firstItem="aa9-mD-tRf" firstAttribute="centerX" secondItem="srj-1E-fuB" secondAttribute="centerX" id="tRD-nv-AFL"/>
                             <constraint firstItem="XB2-Ja-2d3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="wnR-w2-Dfw"/>
+                            <constraint firstItem="aa9-mD-tRf" firstAttribute="centerY" secondItem="srj-1E-fuB" secondAttribute="centerY" id="yAv-YF-ANJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
