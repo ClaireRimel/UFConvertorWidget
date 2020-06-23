@@ -33,6 +33,8 @@
 		FA8AB2DF246EC002007258A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DE246EC002007258A5 /* Assets.xcassets */; };
 		FA8AB2E2246EC002007258A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2E0246EC002007258A5 /* LaunchScreen.storyboard */; };
 		FAC2E7C32493F12B00D98A83 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */; };
+		FAD7C131249B781200C37E40 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7C130249B781200C37E40 /* NotificationService.swift */; };
+		FAD7C135249B781200C37E40 /* UFNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FAD7C12E249B781200C37E40 /* UFNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FAE609ED247ED5C500EB6777 /* Pods_UFConvertorWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03214AC780190ABCD1F91129 /* Pods_UFConvertorWidget.framework */; };
 		FAE609F0247ED5E700EB6777 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA30B863246F019800C6959E /* NotificationCenter.framework */; };
 		FAE8A509248E502D00D5A4E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAE8A50B248E502D00D5A4E1 /* Localizable.strings */; };
@@ -72,6 +74,13 @@
 			remoteGlobalIDString = FA67B1FB247FC31E00110A73;
 			remoteInfo = UFConvertorKit;
 		};
+		FAD7C133249B781200C37E40 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA8AB2CA246EBFFC007258A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAD7C12D249B781200C37E40;
+			remoteInfo = UFNotificationService;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,6 +90,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				FAD7C135249B781200C37E40 /* UFNotificationService.appex in Embed App Extensions */,
 				FA30B86E246F019800C6959E /* UFwidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -146,6 +156,9 @@
 		FA8AB2F2246EC089007258A5 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		FAC2E7BC2493DEAB00D98A83 /* UFConvertorWidgetRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UFConvertorWidgetRelease.entitlements; sourceTree = "<group>"; };
 		FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
+		FAD7C12E249B781200C37E40 /* UFNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UFNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD7C130249B781200C37E40 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		FAD7C132249B781200C37E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAE8A50A248E502D00D5A4E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAE8A50C248E504000D5A4E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAE8A50D248E50C100D5A4E1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -190,6 +203,13 @@
 			files = (
 				FAE609ED247ED5C500EB6777 /* Pods_UFConvertorWidget.framework in Frameworks */,
 				FA67B203247FC31E00110A73 /* UFConvertorKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD7C12B249B781200C37E40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +325,7 @@
 				FA30B865246F019800C6959E /* UFwidget */,
 				FA67B1FD247FC31E00110A73 /* UFConvertorKit */,
 				FA24210C248262B200F60B2D /* UFConvertorKitTests */,
+				FAD7C12F249B781200C37E40 /* UFNotificationService */,
 				FA30B862246F019800C6959E /* Frameworks */,
 				FA8AB2D3246EBFFC007258A5 /* Products */,
 				E2BD0AEEB06B3F811DD61CEA /* Pods */,
@@ -319,6 +340,7 @@
 				FA30B861246F019800C6959E /* UFwidget.appex */,
 				FA67B1FC247FC31E00110A73 /* UFConvertorKit.framework */,
 				FA24210B248262B200F60B2D /* UFConvertorKitTests.xctest */,
+				FAD7C12E249B781200C37E40 /* UFNotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -363,6 +385,15 @@
 				FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAD7C12F249B781200C37E40 /* UFNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7C130249B781200C37E40 /* NotificationService.swift */,
+				FAD7C132249B781200C37E40 /* Info.plist */,
+			);
+			path = UFNotificationService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,11 +485,29 @@
 			dependencies = (
 				FA30B86D246F019800C6959E /* PBXTargetDependency */,
 				FA67B202247FC31E00110A73 /* PBXTargetDependency */,
+				FAD7C134249B781200C37E40 /* PBXTargetDependency */,
 			);
 			name = UFConvertorWidget;
 			productName = UFConvertorWidget;
 			productReference = FA8AB2D2246EBFFC007258A5 /* UFConvertorWidget.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FAD7C12D249B781200C37E40 /* UFNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD7C136249B781200C37E40 /* Build configuration list for PBXNativeTarget "UFNotificationService" */;
+			buildPhases = (
+				FAD7C12A249B781200C37E40 /* Sources */,
+				FAD7C12B249B781200C37E40 /* Frameworks */,
+				FAD7C12C249B781200C37E40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UFNotificationService;
+			productName = UFNotificationService;
+			productReference = FAD7C12E249B781200C37E40 /* UFNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -482,6 +531,9 @@
 					FA8AB2D1246EBFFC007258A5 = {
 						CreatedOnToolsVersion = 11.4;
 					};
+					FAD7C12D249B781200C37E40 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 				};
 			};
 			buildConfigurationList = FA8AB2CD246EBFFC007258A5 /* Build configuration list for PBXProject "UFConvertorWidget" */;
@@ -503,6 +555,7 @@
 				FA30B860246F019800C6959E /* UFwidget */,
 				FA67B1FB247FC31E00110A73 /* UFConvertorKit */,
 				FA24210A248262B200F60B2D /* UFConvertorKitTests */,
+				FAD7C12D249B781200C37E40 /* UFNotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -541,6 +594,13 @@
 				FA5741362481251400BAD968 /* Color.xcassets in Resources */,
 				FA8AB2DF246EC002007258A5 /* Assets.xcassets in Resources */,
 				FA8AB2DD246EBFFC007258A5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD7C12C249B781200C37E40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +776,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAD7C12A249B781200C37E40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD7C131249B781200C37E40 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -739,6 +807,11 @@
 			isa = PBXTargetDependency;
 			target = FA67B1FB247FC31E00110A73 /* UFConvertorKit */;
 			targetProxy = FA67B20B247FC3A300110A73 /* PBXContainerItemProxy */;
+		};
+		FAD7C134249B781200C37E40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAD7C12D249B781200C37E40 /* UFNotificationService */;
+			targetProxy = FAD7C133249B781200C37E40 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1103,6 +1176,46 @@
 			};
 			name = Release;
 		};
+		FAD7C137249B781200C37E40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BDMB887655;
+				INFOPLIST_FILE = UFNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorWidget.UFNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAD7C138249B781200C37E40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BDMB887655;
+				INFOPLIST_FILE = UFNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ClaireSivadier.UFConvertorWidget.UFNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1147,6 +1260,15 @@
 			buildConfigurations = (
 				FA8AB2E7246EC002007258A5 /* Debug */,
 				FA8AB2E8246EC002007258A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAD7C136249B781200C37E40 /* Build configuration list for PBXNativeTarget "UFNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD7C137249B781200C37E40 /* Debug */,
+				FAD7C138249B781200C37E40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
