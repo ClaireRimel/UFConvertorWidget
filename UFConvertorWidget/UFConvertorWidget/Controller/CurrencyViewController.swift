@@ -95,7 +95,6 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     @IBAction func tappedGoButton(_ sender: Any) {
         toggleActivityIndicator(shown: true)
         view.endEditing(true)
-                
         request()
     }
     
