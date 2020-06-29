@@ -43,6 +43,7 @@
 		FAE8A518248E532200D5A4E1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8A517248E532200D5A4E1 /* StringExtension.swift */; };
 		FAE8A51A248E977700D5A4E1 /* Pods_UFConvertorKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912F42BB0AA05D4464FCC33C /* Pods_UFConvertorKitTests.framework */; };
 		FAE8A51B248E977E00D5A4E1 /* Pods_UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFD5D0278B32E879A15A79F /* Pods_UFConvertorKit.framework */; };
+		FAF1AACF24AA7CFF008F6487 /* BackgroundFetchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1AACE24AA7CFF008F6487 /* BackgroundFetchHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		FAE8A514248E514300D5A4E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAE8A515248E52E000D5A4E1 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		FAE8A517248E532200D5A4E1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		FAF1AACE24AA7CFF008F6487 /* BackgroundFetchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFetchHandler.swift; sourceTree = "<group>"; };
 		FBA75BC8603D106B881C5572 /* Pods-UFConvertorKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFConvertorKitTests.debug.xcconfig"; path = "Target Support Files/Pods-UFConvertorKitTests/Pods-UFConvertorKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */,
+				FAF1AACE24AA7CFF008F6487 /* BackgroundFetchHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -771,6 +774,7 @@
 				FA3CA569248116B000F2B6B4 /* RoundedButton.swift in Sources */,
 				FA8AB2D6246EBFFC007258A5 /* AppDelegate.swift in Sources */,
 				FAC2E7C32493F12B00D98A83 /* ScheduleNotification.swift in Sources */,
+				FAF1AACF24AA7CFF008F6487 /* BackgroundFetchHandler.swift in Sources */,
 				FA8AB2D8246EBFFC007258A5 /* SceneDelegate.swift in Sources */,
 				FA30B85C246EF41B00C6959E /* PresentMessage.swift in Sources */,
 			);

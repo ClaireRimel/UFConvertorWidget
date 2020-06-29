@@ -29,7 +29,7 @@ class ScheduleNotification {
             
             let content = UNMutableNotificationContent()
             content.title = "rate of the day"
-            content.body = "poto lindo y suave de mi pikallo <3"
+            content.body = " "
             content.sound = .default
 //            content.badge = 1
             
