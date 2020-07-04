@@ -47,4 +47,19 @@ extension CoreDataService {
             return .failure(error)
         }
     }
+    
+    func fetchSerie(for date: String) -> Result<Bool, Error> {
+        let managedContext = coreDataStack.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SerieEntity")
+        fetchRequest.predicate = NSPredicate(format: "date == %@", date)
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            return .success(result.count == 1)
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return .failure(error)
+        }
+    }
 }
