@@ -21,6 +21,20 @@ public final class RequestModel {
     
     public var series: [Serie] = []
     
+    let coreDataService: CoreDataService = CoreDataService()
+    
+    //fetch all Serie in CoreData
+    //if data exists, verify if there's data for today
+    //if there is, use it. No server request is required
+    //else. Do server request.
+    
+    //On Server response
+    //Store all information in Core Data
+    
+    //1. fetch all Serie
+    //2. fetch specific Serie for date (NSPredicate)
+    //3. save array of Serie from latest server request
+    //4. delete/purge old information...
     
     public init(session: RequestInterface = URLSession.shared){
         self.session = session
@@ -83,10 +97,10 @@ public final class RequestModel {
                             return
                 }
                 
-                self.series = decodedResponse.serie
+                self.series = decodedResponse.series
                 self.latestRateAndDate = LatestRateAndDate(
-                    clpRate: decodedResponse.serie[0].value,
-                    requestDate:  decodedResponse.serie[0].date)
+                    clpRate: decodedResponse.series[0].value,
+                    requestDate:  decodedResponse.series[0].date)
                 
                 DispatchQueue.main.async {
                     then(.success(decodedResponse))
