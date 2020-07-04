@@ -24,5 +24,27 @@ final class CoreDataService {
 
 extension CoreDataService {
     
-    
+    func fetchSeries() -> Result<[Serie], Error> {
+        let managedContext = coreDataStack.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SerieEntity")
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            print("Fetch Result")
+            print(result)
+            let series = result.map {
+                //All Serie properties are non-optional, so we can assume there will be data stored for each of its properties
+                Serie(date: $0.value(forKey: "date") as! String,
+                      value: $0.value(forKey: "value") as! Double)
+            }
+            
+            print("Fetch Result - SERIES")
+            print(series)
+            return .success(series)
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return .failure(error)
+        }
+    }
 }
