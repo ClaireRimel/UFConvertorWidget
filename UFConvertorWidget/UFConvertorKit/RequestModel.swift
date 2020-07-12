@@ -23,6 +23,14 @@ public final class RequestModel {
     
     let coreDataService: CoreDataService = CoreDataService()
     
+    lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "CLT")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return dateFormatter
+    }()
+    
+    
     //fetch all Serie in CoreData
     //if data exists, verify if there's data for today
     //if there is, use it. No server request is required
@@ -30,11 +38,6 @@ public final class RequestModel {
     
     //On Server response
     //Store all information in Core Data
-    
-    //1. fetch all Serie
-    //2. fetch specific Serie for date (NSPredicate)
-    //3. save array of Serie from latest server request
-    //4. delete/purge old information...
     
     public init(session: RequestInterface = URLSession.shared){
         self.session = session
@@ -50,22 +53,60 @@ public final class RequestModel {
         }
         
         // Verify if the latest request was made the same day, to do the conversion with the latest known rate received, otherwise, to process to a new request
-        if let latestRateAndDate = latestRateAndDate, wasRequestMadeToday(requestDate: latestRateAndDate.requestDate) {
-            
-            let clpRate = value * latestRateAndDate.clpRate
-            DispatchQueue.main.async {
-                then(.success(clpRate))
-            }
-        } else {
-            request(  then: { (result) in
-                switch result {
-                case .success:
-                    self.convert(from: from, then: then)
-                case let .failure(error):
-                    then(.failure(error))
+        do {
+            if let todaySerie = try fetchDataForDate(date: .today) {
+                // There is information for today
+                let clpRate = value * todaySerie.value
+                DispatchQueue.main.async {
+                    then(.success(clpRate))
                 }
-            })
+            } else if let yestedaySerie = try fetchDataForDate(date: .yesterday) {
+                //TODO: Request for today
+            } else {
+                //TODO: 1.Request for this month
+            }
+        } catch {
+            //Todo: Handle error
         }
+
+        //        if let latestRateAndDate = latestRateAndDate, wasRequestMadeToday(requestDate: latestRateAndDate.requestDate) {
+        //
+        //            let clpRate = value * latestRateAndDate.clpRate
+        //            DispatchQueue.main.async {
+        //                then(.success(clpRate))
+        //            }
+        //        } else {
+        //            request(  then: { (result) in
+        //                switch result {
+        //                case .success:
+        //                    self.convert(from: from, then: then)
+        //                case let .failure(error):
+        //                    then(.failure(error))
+        //                }
+        //            })
+        //        }
+    }
+    
+    enum FetchableDate: Equatable {
+        case today, yesterday
+    }
+    
+    func fetchDataForDate(date: FetchableDate) throws -> Serie? {
+        let dateParameter: Date
+        switch date {
+        case .today:
+            dateParameter = Date()
+        case .yesterday:
+            guard let yesterdayDate = dateFormatter.calendar.date(byAdding: .day, value: -1, to: Date()) else {
+                return nil
+            }
+            dateParameter = yesterdayDate
+        }
+        
+        let dateString =  dateFormatter.string(from: dateParameter)
+        let predicate = NSPredicate(format: "date == %@", dateString)
+        let result = try coreDataService.fetchSeries(with: predicate, fetchLimit: 1)
+        return result?.first
     }
     
     func request(then: @escaping (Result<RequestResponse, CurrencyConvertorError>) -> Void) {
@@ -153,7 +194,7 @@ public final class RequestModel {
     
     public func cLPToUF(clp: String) -> Double {
         let fromRemplaceWithDot  = clp.replacingOccurrences(of: ",", with: ".")
-
+        
         guard let clpValue = convertToDouble(from: fromRemplaceWithDot), latestRateAndDate?.clpRate != nil  else {
             return 0
         }
