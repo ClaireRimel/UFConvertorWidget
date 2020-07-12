@@ -20,8 +20,8 @@ class CoreDataStack {
         self.modelName = modelName
     }
     
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: self.modelName)
+    lazy var persistentContainer: CustomPersistentContainer = {
+        let container = CustomPersistentContainer(name: self.modelName)
         container.loadPersistentStores {
             (storeDescription, error) in
             if let error = error as NSError? {
@@ -41,4 +41,11 @@ class CoreDataStack {
             print("Unresolved error \(error), \(error.userInfo)")
         }
     }
+}
+
+final class CustomPersistentContainer: NSPersistentContainer {
+    
+    lazy var backgroundManagedContext: NSManagedObjectContext = {
+        newBackgroundContext()
+    }()
 }

@@ -32,6 +32,9 @@
 		FA8AB2DD246EBFFC007258A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DB246EBFFC007258A5 /* Main.storyboard */; };
 		FA8AB2DF246EC002007258A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2DE246EC002007258A5 /* Assets.xcassets */; };
 		FA8AB2E2246EC002007258A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8AB2E0246EC002007258A5 /* LaunchScreen.storyboard */; };
+		FAA65F5B24BB5FE000CBC82A /* SerieManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA65F5A24BB5FE000CBC82A /* SerieManagedObject.swift */; };
+		FAA65F5D24BB606E00CBC82A /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA65F5C24BB606D00CBC82A /* CoreDataService.swift */; };
+		FAA65F5F24BB60B500CBC82A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA65F5E24BB60B500CBC82A /* CoreDataStack.swift */; };
 		FAA9663324ACF04C008C3FAE /* UFConvertor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA9663124ACF04C008C3FAE /* UFConvertor.xcdatamodeld */; };
 		FAC2E7C32493F12B00D98A83 /* ScheduleNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */; };
 		FAD7C131249B781200C37E40 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7C130249B781200C37E40 /* NotificationService.swift */; };
@@ -45,8 +48,6 @@
 		FAE8A51A248E977700D5A4E1 /* Pods_UFConvertorKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912F42BB0AA05D4464FCC33C /* Pods_UFConvertorKitTests.framework */; };
 		FAE8A51B248E977E00D5A4E1 /* Pods_UFConvertorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFD5D0278B32E879A15A79F /* Pods_UFConvertorKit.framework */; };
 		FAF1AACF24AA7CFF008F6487 /* BackgroundFetchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF1AACE24AA7CFF008F6487 /* BackgroundFetchHandler.swift */; };
-		FAF7BB9024B0A2EB00783E6D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7BB8F24B0A2EB00783E6D /* CoreDataStack.swift */; };
-		FAF7BB9224B0A35A00783E6D /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF7BB9124B0A35A00783E6D /* CoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,9 @@
 		FA8AB2E3246EC002007258A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8AB2F0246EC077007258A5 /* ResquestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResquestResponse.swift; sourceTree = "<group>"; };
 		FA8AB2F2246EC089007258A5 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		FAA65F5A24BB5FE000CBC82A /* SerieManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerieManagedObject.swift; sourceTree = "<group>"; };
+		FAA65F5C24BB606D00CBC82A /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		FAA65F5E24BB60B500CBC82A /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FAA9663224ACF04C008C3FAE /* UFConvertor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UFConvertor.xcdatamodel; sourceTree = "<group>"; };
 		FAC2E7BC2493DEAB00D98A83 /* UFConvertorWidgetRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UFConvertorWidgetRelease.entitlements; sourceTree = "<group>"; };
 		FAC2E7C22493F12B00D98A83 /* ScheduleNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleNotification.swift; sourceTree = "<group>"; };
@@ -173,8 +177,6 @@
 		FAE8A515248E52E000D5A4E1 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		FAE8A517248E532200D5A4E1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		FAF1AACE24AA7CFF008F6487 /* BackgroundFetchHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFetchHandler.swift; sourceTree = "<group>"; };
-		FAF7BB8F24B0A2EB00783E6D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		FAF7BB9124B0A35A00783E6D /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		FBA75BC8603D106B881C5572 /* Pods-UFConvertorKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UFConvertorKitTests.debug.xcconfig"; path = "Target Support Files/Pods-UFConvertorKitTests/Pods-UFConvertorKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -410,8 +412,9 @@
 		FAF7BB9324B0A79300783E6D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				FAF7BB8F24B0A2EB00783E6D /* CoreDataStack.swift */,
-				FAF7BB9124B0A35A00783E6D /* CoreDataService.swift */,
+				FAA65F5C24BB606D00CBC82A /* CoreDataService.swift */,
+				FAA65F5E24BB60B500CBC82A /* CoreDataStack.swift */,
+				FAA65F5A24BB5FE000CBC82A /* SerieManagedObject.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -775,12 +778,13 @@
 				FAA9663324ACF04C008C3FAE /* UFConvertor.xcdatamodeld in Sources */,
 				FA67B20E247FC55900110A73 /* ResquestResponse.swift in Sources */,
 				FA67B211247FEEEA00110A73 /* ConvertDouble.swift in Sources */,
+				FAA65F5F24BB60B500CBC82A /* CoreDataStack.swift in Sources */,
+				FAA65F5B24BB5FE000CBC82A /* SerieManagedObject.swift in Sources */,
 				FA67B20F247FC56200110A73 /* CurrencyConvertorError.swift in Sources */,
 				FAE8A516248E52E000D5A4E1 /* BundleExtension.swift in Sources */,
-				FAF7BB9024B0A2EB00783E6D /* CoreDataStack.swift in Sources */,
 				FAE8A518248E532200D5A4E1 /* StringExtension.swift in Sources */,
 				FA67B2132480238E00110A73 /* SetChart.swift in Sources */,
-				FAF7BB9224B0A35A00783E6D /* CoreDataService.swift in Sources */,
+				FAA65F5D24BB606E00CBC82A /* CoreDataService.swift in Sources */,
 				FA67B208247FC33300110A73 /* RequestModel.swift in Sources */,
 				FA2421172482677B00F60B2D /* RequestInterfaceProtocol.swift in Sources */,
 			);

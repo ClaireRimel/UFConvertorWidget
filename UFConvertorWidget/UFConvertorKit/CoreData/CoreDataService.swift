@@ -13,53 +13,89 @@ import CoreData
 final class CoreDataService {
     
     let coreDataStack: CoreDataStack
-
-        //Using dependency injection via initializer allows us to
-        //1. provide as a default argument the value we want to use in our production code
-        //2. possibility to pass a different object as a parameter that can act as a mock for testing purposes
-        init(coreDataStack: CoreDataStack = CoreDataStack.shared) {
-            self.coreDataStack = coreDataStack
+    
+    init(coreDataStack: CoreDataStack = CoreDataStack.shared) {
+        self.coreDataStack = coreDataStack
+        
+        //TODO: hide under feature flag
+//        NotificationCenter.default.addObserver(self, selector: #selector(contextDidSave(_:)), name: .NSManagedObjectContextDidSave, object: nil)
+        
+        //pass context as object. if nil, it will receive notifications from any context
+        let context = coreDataStack.persistentContainer.backgroundManagedContext
+        NotificationCenter.default.addObserver(self, selector: #selector(contextDidChange(_:)), name: .NSManagedObjectContextObjectsDidChange, object: context)
+    }
+    
+    @objc private func contextDidChange(_ notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        
+        if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserts.count > 0 {
+            print("--- INSERTS ---")
+            print(inserts)
+            print("+++++++++++++++")
         }
+        
+        if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>, updates.count > 0 {
+            print("--- UPDATES ---")
+            for update in updates {
+                print(update.changedValues())
+            }
+            print("+++++++++++++++")
+        }
+        
+        if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject>, deletes.count > 0 {
+            print("--- DELETES ---")
+            print(deletes)
+            print("+++++++++++++++")
+        }
+    }
 }
 
 extension CoreDataService {
     
-    func fetchSeries() -> Result<[Serie], Error> {
-        let managedContext = coreDataStack.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SerieEntity")
-        
-        do {
-            let result = try managedContext.fetch(fetchRequest)
-            print("Fetch Result")
-            print(result)
-            let series = result.map {
-                //All Serie properties are non-optional, so we can assume there will be data stored for each of its properties
-                Serie(date: $0.value(forKey: "date") as! String,
-                      value: $0.value(forKey: "value") as! Double)
-            }
-            
-            print("Fetch Result - SERIES")
-            print(series)
-            return .success(series)
-            
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-            return .failure(error)
+    //    NSPredicate(format: "date == %@", date)
+    
+    //1. is there a serie for today's date ?
+    //YES -> uses local data
+    //NO -> (2)
+    
+    //2. is there a serie for yesterday's date ?
+    //YES -> server request for today's date (3a)
+    //NO -> server request for latest 30 days (3b)
+    
+    //3a. saves new serie in CoreData
+    
+    //3b. delete all previous data (to avoid date gaps with no info)
+    //save all new data
+    
+    func fetchSeries(with predicate: NSPredicate?, fetchLimit: Int?) throws -> [Serie]? {
+        let context = coreDataStack.persistentContainer.backgroundManagedContext
+        let fetchRequest = NSFetchRequest<SerieManagedObject>(entityName: "Serie")
+        fetchRequest.predicate = predicate
+        if let fetchLimit = fetchLimit {
+            fetchRequest.fetchLimit = fetchLimit
+        }
+        let result = try context.fetch(fetchRequest)
+        return result.map { Serie(date: $0.date, value: $0.value) }
+    }
+    
+    func save(series: [Serie]) throws {
+        let context = coreDataStack.persistentContainer.backgroundManagedContext
+        try series.forEach {
+            let object = NSEntityDescription.insertNewObject(forEntityName: "Serie",
+                                                             into: context) as! SerieManagedObject
+            object.date = $0.date
+            object.value = $0.value
+            try context.save()
         }
     }
     
-    func fetchSerie(for date: String) -> Result<Bool, Error> {
-        let managedContext = coreDataStack.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SerieEntity")
-        fetchRequest.predicate = NSPredicate(format: "date == %@", date)
-        
-        do {
-            let result = try managedContext.fetch(fetchRequest)
-            return .success(result.count == 1)
-            
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-            return .failure(error)
+    func delete() throws {
+        let context = coreDataStack.persistentContainer.backgroundManagedContext
+        let fetchRequest = NSFetchRequest<SerieManagedObject>(entityName: "Serie")
+        let result = try context.fetch(fetchRequest)
+        result.forEach {
+            context.delete($0)
         }
+        try context.save()
     }
 }
