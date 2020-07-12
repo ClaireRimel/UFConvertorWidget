@@ -7,16 +7,17 @@
 //
 
 import UIKit
-import BackgroundTasks
+import CoreData
+//import BackgroundTasks
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let backgroundFetchHandler = BackgroundFetchHandler()
+//    let backgroundFetchHandler = BackgroundFetchHandler()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        backgroundFetchHandler.registerAppRefreshTask()
+//        backgroundFetchHandler.registerAppRefreshTask()
         return true
     }
     
