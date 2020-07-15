@@ -221,11 +221,11 @@ extension RequestModel {
     public func cLPToUF(clp: String) -> Double {
         let fromRemplaceWithDot  = clp.replacingOccurrences(of: ",", with: ".")
 
-        guard let clpValue = Double(fromRemplaceWithDot), latestRateAndDate?.clpRate != nil  else {
+        guard let clpValue = Double(fromRemplaceWithDot), series.first != nil  else {
             return 0
         }
 
-        let result = (clpValue * 1)/latestRateAndDate!.clpRate
+        let result = (clpValue * 1)/series[0].value
 
         return result
     }
