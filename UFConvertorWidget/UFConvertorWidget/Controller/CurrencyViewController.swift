@@ -82,14 +82,14 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         textField.leftViewMode = .always
         textField.layer.cornerRadius = 17
     }
-
+    
     @IBAction func clpChanged(_ sender: UITextField) {
         if clpValue.text != nil {
-                   let result =  model.cLPToUF(clp: clpValue.text ?? "1")
-                    uFValue.text = "\(result)"
-               } else {
-                   self.presentUIAlert(message: "Error")
-               }
+            let result =  model.cLPToUF(clp: clpValue.text ?? "1")
+            uFValue.text = "\(result)"
+        } else {
+            self.presentUIAlert(message: "Error")
+        }
     }
     
     @IBAction func tappedGoButton(_ sender: Any) {

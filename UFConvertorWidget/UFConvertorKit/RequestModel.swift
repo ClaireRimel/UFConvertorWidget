@@ -229,13 +229,17 @@ extension RequestModel {
     
     public func cLPToUF(clp: String) -> Double {
         let fromRemplaceWithDot  = clp.replacingOccurrences(of: ",", with: ".")
-
-        guard let clpValue = Double(fromRemplaceWithDot), series.first != nil  else {
+        do {
+            guard let todaySerie = try fetchDataForDate(date: .today),
+                let clpValue = Double(fromRemplaceWithDot) else {
+                return 0
+            }
+            
+            let result = clpValue/todaySerie.value
+            return result
+        } catch {
+            print(error.localizedDescription)
             return 0
         }
-
-        let result = (clpValue * 1)/series[0].value
-
-        return result
     }
 }
