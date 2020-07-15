@@ -23,6 +23,13 @@ public final class RequestModel {
         return dateFormatter
     }()
     
+    lazy var shortDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "CLT")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter
+    }()
+    
     lazy var requestDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "CLT")
@@ -92,13 +99,13 @@ public final class RequestModel {
         case .today:
             dateParameter = Date()
         case .yesterday:
-            guard let yesterdayDate = dateFormatter.calendar.date(byAdding: .day, value: -1, to: Date()) else {
+            guard let yesterdayDate = shortDateFormatter.calendar.date(byAdding: .day, value: -1, to: Date()) else {
                 return nil
             }
             dateParameter = yesterdayDate
         }
         
-        let dateString =  dateFormatter.string(from: dateParameter)
+        let dateString =  shortDateFormatter.string(from: dateParameter)
         let predicate = NSPredicate(format: "date == %@", dateString)
         let result = try coreDataService.fetchSeries(with: predicate, fetchLimit: 1)
         return result?.first
@@ -144,18 +151,25 @@ extension RequestModel {
                             return
                 }
                 
-                self.series = decodedResponse.series
+                self.series = decodedResponse.series.compactMap({
+                    if let date = self.dateFormatter.date(from: $0.date) {
+                        let newDate = self.shortDateFormatter.string(from: date)
+                        return Serie(date: newDate, value: $0.value)
+                    } else {
+                        return nil
+                    }
+                })
                 
                 do {
                     switch timeFrame {
                     case .today:
                         //We asume that the first element of the series array represents todays date
-                        let todaySerie = decodedResponse.series[0]
+                        let todaySerie = self.series[0]
                         try self.coreDataService.save(series: [todaySerie])
                         
                     case .lastMonth:
                        try self.coreDataService.delete()
-                       try self.coreDataService.save(series: decodedResponse.series)
+                       try self.coreDataService.save(series: self.series)
                     }
                     
                     DispatchQueue.main.async {
