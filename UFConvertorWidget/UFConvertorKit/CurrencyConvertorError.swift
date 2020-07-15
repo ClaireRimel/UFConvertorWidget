@@ -10,7 +10,7 @@ import Foundation
 
 //typed errors
 public enum CurrencyConvertorError: Error, Equatable {
-    case requestError(NSError)
+    case error(NSError)
     case invalidResponseFormat
     case invalidInput
 }
@@ -18,7 +18,7 @@ public enum CurrencyConvertorError: Error, Equatable {
 public extension CurrencyConvertorError {
      var message: String{
         switch self {
-        case let .requestError(error):
+        case let .error(error):
             return error.localizedDescription
         case .invalidResponseFormat:
             return String.localized(key: "Invalid response format")

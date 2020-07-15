@@ -9,14 +9,7 @@
 import Foundation
 
 public final class RequestModel {
-    
-//    struct LatestRateAndDate {
-//        var clpRate: Double
-//        var requestDate: String
-//    }
-    
-//    var latestRateAndDate: LatestRateAndDate?
-    
+     
     public let session: RequestInterface
     
     public var series: [Serie] = []
@@ -85,7 +78,7 @@ public final class RequestModel {
                 })
             }
         } catch {
-            //Todo: Handle error
+            then(.failure(.error(error as NSError)))
         }
     }
     
@@ -138,7 +131,6 @@ extension RequestModel {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         
-        //TODO: wrap code inside a Result type for better error handling
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
             let statusCode = (response as! HTTPURLResponse).statusCode
             if statusCode == 200 {
@@ -172,14 +164,13 @@ extension RequestModel {
                     }
                     
                 } catch {
-                    //TODO: Handle error
-                    return
+                    then(.failure(.error(error as NSError)))
                 }
             } else {
                 let nserror: NSError = error != nil ? error! as NSError : NSError(domain: "UFConvertorKit", code: 1, userInfo: [NSLocalizedDescriptionKey: "request error"])
                 
                 DispatchQueue.main.async {
-                    then(.failure(.requestError(nserror)))
+                    then(.failure(.error(nserror)))
                 }
             }
         })
