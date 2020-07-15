@@ -108,7 +108,11 @@ public final class RequestModel {
         let dateString =  shortDateFormatter.string(from: dateParameter)
         let predicate = NSPredicate(format: "date == %@", dateString)
         let result = try coreDataService.fetchSeries(with: predicate, fetchLimit: 1)
-        return result?.first
+        return result.first
+    }
+
+   public func fetchLastMonthData() throws -> [Serie] {
+       return try coreDataService.fetchSeries(with: nil, fetchLimit: 30)
     }
 }
 

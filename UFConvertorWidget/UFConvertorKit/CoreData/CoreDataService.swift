@@ -67,7 +67,7 @@ extension CoreDataService {
     //3b. delete all previous data (to avoid date gaps with no info)
     //save all new data
     
-    func fetchSeries(with predicate: NSPredicate?, fetchLimit: Int?) throws -> [Serie]? {
+    func fetchSeries(with predicate: NSPredicate?, fetchLimit: Int?) throws -> [Serie] {
         let context = coreDataStack.persistentContainer.backgroundManagedContext
         let fetchRequest = NSFetchRequest<SerieManagedObject>(entityName: "Serie")
         fetchRequest.predicate = predicate
