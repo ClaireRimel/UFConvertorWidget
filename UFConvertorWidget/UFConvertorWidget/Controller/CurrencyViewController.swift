@@ -82,14 +82,14 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
         textField.leftViewMode = .always
         textField.layer.cornerRadius = 17
     }
-
+    
     @IBAction func clpChanged(_ sender: UITextField) {
         if clpValue.text != nil {
-                   let result =  model.cLPToUF(clp: clpValue.text ?? "1")
-                    uFValue.text = "\(result)"
-               } else {
-                   self.presentUIAlert(message: "Error")
-               }
+            let result =  model.cLPToUF(clp: clpValue.text ?? "1")
+            uFValue.text = "\(result)"
+        } else {
+            self.presentUIAlert(message: "Error")
+        }
     }
     
     @IBAction func tappedGoButton(_ sender: Any) {
@@ -129,20 +129,25 @@ class CurrencyViewController: UIViewController, ChartViewDelegate {
     }
     
     func drawGraph() {
-        let setChart = SetChart(series: model.series)
-        let set1 = LineChartDataSet(entries: setChart.chartData(), label: "CLP")
-        
-        set1.drawCirclesEnabled = false
-        set1.mode = .linear
-        set1.lineWidth = 3
-        set1.setColor(#colorLiteral(red: 0.6375279427, green: 0.6473982334, blue: 0.7130541086, alpha: 1))
-        set1.highlightColor = #colorLiteral(red: 0.08630939573, green: 0.1065077558, blue: 0.1527832747, alpha: 1)
-        set1.highlightLineWidth = 2
-        set1.drawHorizontalHighlightIndicatorEnabled = false
-        
-        let data = LineChartData(dataSet: set1)
-        data.setDrawValues(false)
-        lineChartView.data = data
+        do {
+            let series = try model.fetchLastMonthData()
+            let setChart = SetChart(series: series)
+            let set1 = LineChartDataSet(entries: setChart.chartData(), label: "CLP")
+            
+            set1.drawCirclesEnabled = false
+            set1.mode = .linear
+            set1.lineWidth = 3
+            set1.setColor(#colorLiteral(red: 0.6375279427, green: 0.6473982334, blue: 0.7130541086, alpha: 1))
+            set1.highlightColor = #colorLiteral(red: 0.08630939573, green: 0.1065077558, blue: 0.1527832747, alpha: 1)
+            set1.highlightLineWidth = 2
+            set1.drawHorizontalHighlightIndicatorEnabled = false
+            
+            let data = LineChartData(dataSet: set1)
+            data.setDrawValues(false)
+            lineChartView.data = data
+        } catch {
+            #warning("handling error")
+        }
     }
 }
 

@@ -9,18 +9,43 @@
 import Foundation
 
 public final class RequestModel {
-    
-    struct LatestRateAndDate {
-        var clpRate: Double
-        var requestDate: String
-    }
-    
-    var latestRateAndDate: LatestRateAndDate?
-    
+     
     public let session: RequestInterface
     
     public var series: [Serie] = []
     
+    let coreDataService: CoreDataService = CoreDataService()
+    
+    lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "CLT")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return dateFormatter
+    }()
+    
+    lazy var shortDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "CLT")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter
+    }()
+    
+    lazy var requestDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "CLT")
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter
+    }()
+    
+    
+    
+    //fetch all Serie in CoreData
+    //if data exists, verify if there's data for today
+    //if there is, use it. No server request is required
+    //else. Do server request.
+    
+    //On Server response
+    //Store all information in Core Data
     
     public init(session: RequestInterface = URLSession.shared){
         self.session = session
@@ -29,37 +54,85 @@ public final class RequestModel {
     public func convert(from: String, then: @escaping (Result<Double, CurrencyConvertorError>) -> Void) {
         let fromRemplaceWithDot  = from.replacingOccurrences(of: ",", with: ".")
         // Verify if the String can be converter to a Double, if not, a error message will be displayed.
-        guard let value = convertToDouble(from: fromRemplaceWithDot)
+        guard let value = Double(fromRemplaceWithDot)
             else {
                 then(.failure(.invalidInput))
                 return
         }
         
         // Verify if the latest request was made the same day, to do the conversion with the latest known rate received, otherwise, to process to a new request
-        if let latestRateAndDate = latestRateAndDate, wasRequestMadeToday(requestDate: latestRateAndDate.requestDate) {
-            
-            let clpRate = value * latestRateAndDate.clpRate
-            DispatchQueue.main.async {
-                then(.success(clpRate))
-            }
-        } else {
-            request(  then: { (result) in
-                switch result {
-                case .success:
-                    self.convert(from: from, then: then)
-                case let .failure(error):
-                    then(.failure(error))
+        do {
+            if let todaySerie = try fetchDataForDate(date: .today) {
+                // There is information for today
+                let clpRate = value * todaySerie.value
+                DispatchQueue.main.async {
+                    then(.success(clpRate))
                 }
-            })
+            } else {
+                let timeFrame: DataTimeFrame
+                if try fetchDataForDate(date: .yesterday) != nil {
+                    timeFrame = .today
+                } else {
+                    timeFrame = .lastMonth
+                }
+                request(timeFrame: timeFrame, then: { (result) in
+                    switch result {
+                    case .success:
+                        self.convert(from: from, then: then)
+                    case let .failure(error):
+                        then(.failure(error))
+                    }
+                })
+            }
+        } catch {
+            then(.failure(.error(error as NSError)))
         }
     }
     
-    func request(then: @escaping (Result<RequestResponse, CurrencyConvertorError>) -> Void) {
+    enum FetchableDate: Equatable {
+        case today, yesterday
+    }
+    
+    func fetchDataForDate(date: FetchableDate) throws -> Serie? {
+        let dateParameter: Date
+        switch date {
+        case .today:
+            dateParameter = Date()
+        case .yesterday:
+            guard let yesterdayDate = shortDateFormatter.calendar.date(byAdding: .day, value: -1, to: Date()) else {
+                return nil
+            }
+            dateParameter = yesterdayDate
+        }
         
+        let dateString =  shortDateFormatter.string(from: dateParameter)
+        let predicate = NSPredicate(format: "date == %@", dateString)
+        let result = try coreDataService.fetchSeries(with: predicate, fetchLimit: 1)
+        return result.first
+    }
+
+   public func fetchLastMonthData() throws -> [Serie] {
+       return try coreDataService.fetchSeries(with: nil, fetchLimit: 30)
+    }
+}
+
+extension RequestModel {
+    
+    enum DataTimeFrame: Equatable {
+        case today, lastMonth
+    }
+    
+    func request(timeFrame: DataTimeFrame, then: @escaping (Result<RequestResponse, CurrencyConvertorError>) -> Void) {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "mindicador.cl"
-        components.path = "/api/uf"
+        
+        switch timeFrame {
+        case .today:
+            components.path = "/api/uf/\(requestDateFormatter)"
+        case .lastMonth:
+            components.path = "/api/uf"
+        }
         
         //Gets URL object based on given components
         let url = components.url!
@@ -69,7 +142,6 @@ public final class RequestModel {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         
-        //TODO: wrap code inside a Result type for better error handling
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
             let statusCode = (response as! HTTPURLResponse).statusCode
             if statusCode == 200 {
@@ -83,20 +155,40 @@ public final class RequestModel {
                             return
                 }
                 
-                self.series = decodedResponse.serie
-                self.latestRateAndDate = LatestRateAndDate(
-                    clpRate: decodedResponse.serie[0].value,
-                    requestDate:  decodedResponse.serie[0].date)
+                self.series = decodedResponse.series.compactMap({
+                    if let date = self.dateFormatter.date(from: $0.date) {
+                        let newDate = self.shortDateFormatter.string(from: date)
+                        return Serie(date: newDate, value: $0.value)
+                    } else {
+                        return nil
+                    }
+                })
                 
-                DispatchQueue.main.async {
-                    then(.success(decodedResponse))
-                    print(decodedResponse)
+                do {
+                    switch timeFrame {
+                    case .today:
+                        //We asume that the first element of the series array represents todays date
+                        let todaySerie = self.series[0]
+                        try self.coreDataService.save(series: [todaySerie])
+                        
+                    case .lastMonth:
+                       try self.coreDataService.delete()
+                       try self.coreDataService.save(series: self.series)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        then(.success(decodedResponse))
+                        print(decodedResponse)
+                    }
+                    
+                } catch {
+                    then(.failure(.error(error as NSError)))
                 }
             } else {
                 let nserror: NSError = error != nil ? error! as NSError : NSError(domain: "UFConvertorKit", code: 1, userInfo: [NSLocalizedDescriptionKey: "request error"])
                 
                 DispatchQueue.main.async {
-                    then(.failure(.requestError(nserror)))
+                    then(.failure(.error(nserror)))
                 }
             }
         })
@@ -127,25 +219,27 @@ public final class RequestModel {
         return false
     }
     
-    // Use to convert a curreny to a Double
-    func convertToDouble(from currency: String)-> Double? {
-        return Double(currency)
-    }
-    
     public func differenceValue(day1: Double, day2: Double) -> Double {
         let difference = day1 - day2
         return Double(difference)
     }
+}
+
+extension RequestModel {
     
     public func cLPToUF(clp: String) -> Double {
         let fromRemplaceWithDot  = clp.replacingOccurrences(of: ",", with: ".")
-
-        guard let clpValue = convertToDouble(from: fromRemplaceWithDot), latestRateAndDate?.clpRate != nil  else {
+        do {
+            guard let todaySerie = try fetchDataForDate(date: .today),
+                let clpValue = Double(fromRemplaceWithDot) else {
+                return 0
+            }
+            
+            let result = clpValue/todaySerie.value
+            return result
+        } catch {
+            print(error.localizedDescription)
             return 0
         }
-        
-        let result = (clpValue * 1)/latestRateAndDate!.clpRate
-        
-        return result
     }
 }
